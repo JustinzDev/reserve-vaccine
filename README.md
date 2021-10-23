@@ -26,10 +26,10 @@ And finally, maintaining your version number`:
 Happy Pawning!
 -->
 
-## Installation
+## วิธีการติดตั้ง
 
 Simply install to your project:
 
 ```bash
-sampctl package install Justinzsamp/reserve-vaccine
+git clone Justinzsamp/reserve-vaccine
 ```
