@@ -28,7 +28,7 @@ Happy Pawning!
 
 ## วิธีการติดตั้ง
 
-Simply install to your project:
+ติดตั้งสำหรับโปรเจคของคุณ:
 
 ```bash
 git clone Justinzsamp/reserve-vaccine
