@@ -34,7 +34,7 @@
         <div class="right-menu">
             <a href="<?php echo $mylocalhost;?>">หน้าหลัก</a>
             <a href="#" data-target="reserve">จองคิววัคซีน</a>
-            <a href="#">เช็คคิววัคซีน</a>
+            <a href="#" data-target="check-vaccine">เช็คคิววัคซีน</a>
             <a href="#">ติดต่อทีมงาน</a>
         </div>
         <i class="fa fa-bars" onclick="downmenu()"></i>

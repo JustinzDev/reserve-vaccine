@@ -27,14 +27,11 @@
             </div>
         </div>
     </div>
-    <div class="header-div">
-        ส่วนของ Header
-    </div>
     <div class="card-group mt-3" id="contentdata"></div>
 </body> 
 <script type="text/javascript">
-        /*$(window).on('load',function(){
-            $('#myModal').modal('show');
-        });*/
-    </script>
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+</script>
 </html>
