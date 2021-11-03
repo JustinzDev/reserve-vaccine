@@ -52,6 +52,8 @@ body{ /* Type Selector */
 }
 
 /* หน้าจองวัคซีน */
-
+body{
+    margin-top: 50px;
+}
 
 /* หน้าเช็ควัคซีน */
