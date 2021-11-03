@@ -13,7 +13,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <?php include('top-navbar.php'); ?>
     <div id="myModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-dialog-scrollable modal-xl">
             <div class="modal-content">
