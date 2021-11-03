@@ -24,13 +24,13 @@
 <body>
     <div class="menu-blackground">
         <hr>
-        <a href="#" data-target="reserve"> 
+        <a data-target="check-vaccine"> 
             <img src="../best-of-vaccine/assets/img/menu1.png">
         </a>
-        <a href="#" data-target="reserve"> 
+        <a  data-target="reserve"> 
             <img src="../best-of-vaccine/assets/img/menu2.png">
         </a>
-        <a href="#" data-target="reserve"> 
+        <a data-target="reserve"> 
             <img src="../best-of-vaccine/assets/img/menu3.png">
         </a>
         <hr>
