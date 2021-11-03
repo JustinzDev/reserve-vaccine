@@ -26,7 +26,7 @@ a:hover{
 
 .blackground { /* Class Selector */
     margin: auto;
-    height: 480px;
+    height: 500px;
     background-color: purple;
 }
 
@@ -61,12 +61,20 @@ a:hover{
     background-color: antiquewhite;
     margin-top: 10px;
 }
-.text-blackground1 h5 {
+h5 {
+    font-size: 17px;
+    text-align: center;
+    color: blueviolet;
+    margin-top: 60px;
+}
+
+.text-blackground1 > h5{
     font-size: 17px;
     text-align: center;
     margin-top: 10px;
-    color: blueviolet;
+    color: rgb(255, 42, 42);
 }
+
 .menu-blackground {
     text-align: center;
 }
@@ -128,10 +136,10 @@ a:hover{
     padding: 20px;
     background-color: rgb(204, 204, 204);
 }
-.Contorl_form > input{
+.Contorl_form input{
     margin-top: 3px;
 }
-.Contorl_form > textarea{
+.Contorl_form textarea{
     resize: none;
     width: 80%;
 }
