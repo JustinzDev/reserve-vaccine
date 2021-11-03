@@ -61,19 +61,14 @@ a:hover{
     background-color: antiquewhite;
     margin-top: 10px;
 }
-<<<<<<< HEAD
 h5 {
-=======
-.text-blackground1 h5 { /*Descendant selector*/
->>>>>>> 08ff242d2eae2d931361a514ab1647f8cca2d26e
     font-size: 17px;
     text-align: center;
     color: blueviolet;
     margin-top: 60px;
 }
-<<<<<<< HEAD
 
-.text-blackground1 > h5{
+.text-blackground1 > h5{ /* Child selector*/
     font-size: 17px;
     text-align: center;
     margin-top: 10px;
@@ -81,9 +76,6 @@ h5 {
 }
 
 .menu-blackground {
-=======
-.menu-blackground { /* Class Selector */
->>>>>>> 08ff242d2eae2d931361a514ab1647f8cca2d26e
     text-align: center;
 }
 .menu-blackground hr { /*Descendant selector*/
@@ -144,24 +136,11 @@ h5 {
     padding: 20px;
     background-color: rgb(204, 204, 204);
 }
-<<<<<<< HEAD
-.Contorl_form input{
-    margin-top: 3px;
-}
-.Contorl_form textarea{
-=======
-<<<<<<< HEAD
+
 .Contorl_form input{ /*Descendant selector*/
     margin-top: 3px;
 }
 .Contorl_form textarea{ /*Descendant selector*/
-=======
-.Contorl_form > input{
-    margin-top: 3px;
-}
-.Contorl_form > textarea{
->>>>>>> 92f7ef20c20c2b31a565611d6499afc478845063
->>>>>>> 08ff242d2eae2d931361a514ab1647f8cca2d26e
     resize: none;
     width: 80%;
 }
