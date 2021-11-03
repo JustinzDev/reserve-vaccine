@@ -128,10 +128,17 @@ a:hover{
     padding: 20px;
     background-color: rgb(204, 204, 204);
 }
+<<<<<<< HEAD
 .Contorl_form input{ /*Descendant selector*/
     margin-top: 3px;
 }
 .Contorl_form textarea{ /*Descendant selector*/
+=======
+.Contorl_form > input{
+    margin-top: 3px;
+}
+.Contorl_form > textarea{
+>>>>>>> 92f7ef20c20c2b31a565611d6499afc478845063
     resize: none;
     width: 80%;
 }
@@ -173,7 +180,7 @@ a:hover{
     text-align: center;
     background-color: rgb(243, 243, 243);
 }
-.divC h3{ /*Descendant selector*/
+.divC h3{ /* Descendant selector */
     text-align: center;
     
 }
