@@ -5,17 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script>
+        $(document).ready(function(){
+            var trigger = $('.menu-blackground a'),
+                container = $('#contentdata');
+
+            trigger.on('click', function(){
+                var $this = $(this)
+                target = $this.data('target');
+
+                container.load(target);
+                return false;
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="menu-blackground">
         <hr>
-        <a href="#"> 
+        <a href="#" data-target="reserve"> 
             <img src="../best-of-vaccine/assets/img/menu1.png">
         </a>
-        <a href="#"> 
+        <a href="#" data-target="reserve"> 
             <img src="../best-of-vaccine/assets/img/menu2.png">
         </a>
-        <a href="#"> 
+        <a href="#" data-target="reserve"> 
             <img src="../best-of-vaccine/assets/img/menu3.png">
         </a>
         <hr>

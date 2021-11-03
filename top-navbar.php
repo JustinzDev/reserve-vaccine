@@ -10,20 +10,7 @@
     <link href="<?php echo $mylocalhost; ?>assets/css/top-navbar.css?v=<?=time();?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
 
-    <script>
-        $(document).ready(function(){
-            var trigger = $('#topnavbar a'),
-                container = $('#contentdata');
-
-            trigger.on('click', function(){
-                var $this = $(this)
-                target = $this.data('target');
-
-                container.load(target);
-                return false;
-            });
-        });
-    </script>
+    
 
 </head>
 <body>
