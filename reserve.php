@@ -96,7 +96,7 @@
                         <option value="Sinopharm">ซึนะงาคุเระ</option>
                     </select>                                                                           <br>
 
-                    <input type="submit">
+                    <input style="margin-top:30px;" type="submit" value="ยืนยันการจอง">
                 </div>
 
             </form>

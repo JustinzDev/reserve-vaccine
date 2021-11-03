@@ -13,7 +13,7 @@ a:hover{
     cursor: pointer;
 }
 
-.menutype{
+.menutype{ /* Class Selector */
     margin: auto;
     margin-top: 20px;
     text-align: center;
@@ -126,11 +126,10 @@ a:hover{
     margin-top: 20px;
     text-align: center;
     padding: 20px;
-    font-size: 12px;
     background-color: rgb(204, 204, 204);
 }
 .Contorl_form input{
-    margin-left: 5px; 
+    margin-top: 3px;
 }
 .Contorl_form textarea{
     resize: none;
@@ -146,7 +145,6 @@ a:hover{
     }
     .Box_Input_vaccin02{
         width: 80%;
-        height: 1000px;
         padding: 50px;
         font-size: 20px;
         margin-bottom: 20px;
