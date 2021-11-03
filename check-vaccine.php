@@ -27,25 +27,29 @@
     </script>
 </head>
 <body>
-    <div class="menutype">
-        <a data-target="reserve">จองวัคซีน</a>
-        <a data-target="check-vaccine">เช็คคิววัคซีน</a>
-        <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost;?>">กลับหน้าหลัก</a>
-    </div>
-    <div class="divA">
-        <div class="divC">
-            <h3>กรุณากรอกข้อมูลเพื่อค้นหาลำดับการจอง</h3>
-            <p id="text1">ข้อมูลที่ใช้สำหรับกรอกส่วนนี้เป็นข้อมูลส่วนบุคคลที่ได้ทำการลงทะเบียนการจองวัคซีน</p>
-            <label id="text2">เลขบัตรประชาชน 13 หลัก</label><br>
-            <input id="text3" type="text" size="20px"><br>
-            <label id="text4">เบอร์โทรศัพท์มือถือที่ลงทะเบียน</label><br>
-            <input id="text5" type="text" size="20px"><br>
-            <div class="divD">
-                <button class="button1">LOGIN</button>
-                <button class="button2">RESET</button>
-            </div>  
-            <p id="text6">***ถ้ามีปัญหาในการใช้งานระบบโปรดเเจ้งหรือทำการติดต่อมาที่ฝ่ายสนับสนุน***</p>  
+    <header>
+        <div class="menutype">
+            <a data-target="reserve">จองวัคซีน</a>
+            <a data-target="check-vaccine">เช็คคิววัคซีน</a>
+            <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost;?>">กลับหน้าหลัก</a>
         </div>
-    </div>
+    </header>
+    <main>
+        <div class="divA">
+            <div class="divC">
+                <h3>กรุณากรอกข้อมูลเพื่อค้นหาลำดับการจอง</h3>
+                <p id="text1">ข้อมูลที่ใช้สำหรับกรอกส่วนนี้เป็นข้อมูลส่วนบุคคลที่ได้ทำการลงทะเบียนการจองวัคซีน</p>
+                <label id="text2">เลขบัตรประชาชน 13 หลัก</label><br>
+                <input id="text3" type="text" size="20px"><br>
+                <label id="text4">เบอร์โทรศัพท์มือถือที่ลงทะเบียน</label><br>
+                <input id="text5" type="text" size="20px"><br>
+                <div class="divD">
+                    <button class="button1">LOGIN</button>
+                    <button class="button2">RESET</button>
+                </div>  
+                <p id="text6">***ถ้ามีปัญหาในการใช้งานระบบโปรดเเจ้งหรือทำการติดต่อมาที่ฝ่ายสนับสนุน***</p>  
+            </div>
+        </div>
+    </main>
 </body>
 </html>
