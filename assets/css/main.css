@@ -9,7 +9,7 @@ body{ /* Type Selector */
     margin: 0px;
 }
 
-a:hover{
+a:hover{ /* Pseudo-Class Selector */
     cursor: pointer;
 }
 
@@ -78,6 +78,12 @@ h5 {
 .menu-blackground {
     text-align: center;
 }
+
+.menu-blackground img:hover{ /* Pseudo-Class selector*/
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
 .menu-blackground hr { /*Descendant selector*/
     margin: auto;
     margin-top: 10px;
