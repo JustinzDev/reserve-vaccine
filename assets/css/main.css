@@ -3,52 +3,101 @@
 
 * { /* Universal Selector */
     font-family: 'Kanit', sans-serif;
-    overflow: hidden;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
 }
 
 body{ /* Type Selector */
     margin: 0px;
+    width: 100%;
+    height: 100%;
 }
 .header-div{ /* Class Selector */
     background-color: red;
     width: 100%;
     height: 100%;
 }
-.blackground1 { /* Class Selector */
+.blackground { /* Class Selector */
     width: 100%;
     height: 500px;
     background-color: purple;
 }
-.blackground1 img { /* Class Selector */
+.blackground img { /* Class Selector */
     margin-top: 70px;
     margin-left: 700px;
 }
-.blackground1 h4 {
+.blackground h4 {
     margin-top: 30px;
     margin-left: 350px;
     color: aliceblue;
 }
-.blackground1 hr {
+.blackground hr {
     color: white;
     margin-left: 350px;
     width: 60%;
 }
-.blackground1 h5 {
+.blackground h5 {
     margin-left: 350px;
     color: aliceblue;
     font-size: 14px;
 }
-.blackground2 {
+.text-blackground1 {
     width: 60%;
-    height: 100px;
+    height: 80px;
     background-color: antiquewhite;
     margin-left: 350px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
-.blackground2 h5 {
+.text-blackground1 h5 {
     font-size: 17px;
     text-align: center;
     margin-top: 10px;
+    color: blueviolet;
+}
+.menu-blackground {
+    text-align: center;
+}
+.menu-blackground hr {
+    margin-left: 630px;
+    width: 30%;
+}
+.text-blackground2 {
+    margin-top: 7px;
+    text-align: center;
+}
+.text-blackground2 h2 {
+    color: blueviolet;
+}
+.text-blackground2 u {
+    color: red;
+    font-size: 20px;
+}
+@media screen and (max-width: 1024px) {
+
+    .blackground img{
+        width: 100%;
+        margin: auto;
+    }
+    .blackground h4 {
+        margin: auto;
+        text-align: center;
+    }
+    .blackground h5 {
+        margin: auto;
+        text-align: center;
+    }
+    .blackground hr {
+        margin: auto;
+        text-align: center;
+    }
+    .text-blackground1 {
+        margin: auto;
+        text-align: center;
+    }
+    .text-blackground1 h5 {
+        margin: auto;
+        text-align: center;
+    }
 }
 
 /* หน้าจองวัคซีน */
