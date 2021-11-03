@@ -30,85 +30,85 @@ a:hover{
     background-color: purple;
 }
 
-.blackground .image-logo{
+.blackground .image-logo{ /* Class Selector */
     text-align: center;
     padding: 20px;
 }
 
-.message-logo{
+.message-logo{ /* Class Selector */
     text-align: center;
 }
 
-.message-logo h4 {
+.message-logo h4 { /*Descendant selector*/
     margin-top: 30px;
     color: aliceblue;
 }
-.message-logo hr {
+.message-logo hr { /*Descendant selector*/
     margin: auto;
     color: white;
     width: 60%;
 }
-.message-logo h5 {
+.message-logo h5 { /*Descendant selector*/
     margin-top: 20px;
     margin-bottom: 20px;
     color: aliceblue;
     font-size: 14px;
 }
-.text-blackground1 {
+.text-blackground1 { /* Class Selector */
     margin: auto;
     width: 60%;
     padding: 10px;
     background-color: antiquewhite;
     margin-top: 10px;
 }
-.text-blackground1 h5 {
+.text-blackground1 h5 { /*Descendant selector*/
     font-size: 17px;
     text-align: center;
     margin-top: 10px;
     color: blueviolet;
 }
-.menu-blackground {
+.menu-blackground { /* Class Selector */
     text-align: center;
 }
-.menu-blackground hr {
+.menu-blackground hr { /*Descendant selector*/
     margin: auto;
     margin-top: 10px;
     width: 30%;
 }
-.text-blackground2 {
+.text-blackground2 { /* Class Selector */
     margin-top: 7px;
     text-align: center;
 }
-.text-blackground2 h2 {
+.text-blackground2 h2 { /*Descendant selector*/
     color: blueviolet;
 }
-.text-blackground2 u {
+.text-blackground2 u { /*Descendant selector*/
     color: red;
     font-size: 20px;
 }
 @media screen and (max-width: 1024px) {
 
-    .blackground img{
+    .blackground img{ /*Descendant selector*/
         width: 100%;
         margin: auto;
     }
-    .blackground h4 {
+    .blackground h4 { /*Descendant selector*/
         margin: auto;
         text-align: center;
     }
-    .blackground h5 {
+    .blackground h5 { /*Descendant selector*/
         margin: auto;
         text-align: center;
     }
-    .blackground hr {
+    .blackground hr { /*Descendant selector*/
         margin: auto;
         text-align: center;
     }
-    .text-blackground1 {
+    .text-blackground1 { /* Class Selector */
         margin: auto;
         text-align: center;
     }
-    .text-blackground1 h5 {
+    .text-blackground1 h5 { /*Descendant selector*/
         margin: auto;
         text-align: center;
     }
@@ -116,11 +116,11 @@ a:hover{
 
 /* หน้าจองวัคซีน */
 
-.Box_Input_vaccin01{
+.Box_Input_vaccin01{ /* Class Selector */
     width: 100%;
     margin: auto;
 }
-.Box_Input_vaccin02{
+.Box_Input_vaccin02{ /* Class Selector */
     width: 80%;
     margin: auto;
     margin-top: 20px;
@@ -128,33 +128,34 @@ a:hover{
     padding: 20px;
     background-color: rgb(204, 204, 204);
 }
-.Contorl_form input{
+.Contorl_form input{ /*Descendant selector*/
     margin-top: 3px;
 }
-.Contorl_form textarea{
+.Contorl_form textarea{ /*Descendant selector*/
     resize: none;
     width: 80%;
 }
 
 @media screen and (min-width: 681px) {
-    .Box_Input_vaccin01{
+    .Box_Input_vaccin01{ /* Class Selector */
         width: 100%;
         margin: auto;
         display: flex;
         text-align: center;
     }
-    .Box_Input_vaccin02{
+    .Box_Input_vaccin02{ /* Class Selector */
         width: 80%;
         padding: 50px;
         font-size: 20px;
         margin-bottom: 20px;
         background-color: rgb(204, 204, 204);
     }
-    .Contorl_form input{
-        margin-left: 10px; 
+    .Contorl_form  input{ /*Descendant selector*/
+        margin-top: 3px;
     }
-    .Contorl_form textarea{
+    .Contorl_form  textarea{ /*Descendant selector*/
         resize: none;
+        width: 80%;
     }
 }
 
@@ -176,45 +177,45 @@ a:hover{
     text-align: center;
     
 }
-#text1{ 
+#text1{ /* Id Selector */
     margin-top: 20px;
     font-size: 18px;
     color: rgb(107, 107, 107);
     
 }
-#text2{ 
+#text2{ /* Id Selector */
     margin-top: 15px;
     font-size: 15px;
 }
-#text3{ 
+#text3{ /* Id Selector */
     margin-top: 5px;
 }
-#text4{ 
+#text4{ /* Id Selector */
     margin-top: 30px;
     font-size: 15px;
 }
-#text5{ 
+#text5{ /* Id Selector */
     margin-top: 5px;
 }
-.divD {
+.divD { /* Class Selector */
     margin-top: 20px;
 
 }
-.divD .button1{
+.divD .button1{ /* Class Selector */
     background-color: rgb(255, 60, 60);
     color: white;
     font-size: 18px;
     width: 100px;
     height: 40px;
 }
-.divD .button2{
+.divD .button2{ /* Class Selector */
     background-color: rgb(255, 60, 60);
     color: white;
     font-size: 18px;
     width: 100px;
     height: 40px;
 }
-.divC #text6{ 
+.divC #text6{ /* Descendant  Selector */
     margin-top: 40px;
     font-size: 17px;
     color: tomato;
