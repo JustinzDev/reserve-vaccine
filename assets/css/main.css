@@ -3,49 +3,47 @@
 
 * { /* Universal Selector */
     font-family: 'Kanit', sans-serif;
-    overflow: -moz-scrollbars-vertical;
-    overflow-y: scroll;
 }
 
 body{ /* Type Selector */
     margin: 0px;
-    width: 100%;
-    height: 100%;
 }
-.header-div{ /* Class Selector */
-    background-color: red;
-    width: 100%;
-    height: 100%;
-}
+
 .blackground { /* Class Selector */
-    width: 100%;
-    height: 500px;
+    margin: auto;
+    height: 480px;
     background-color: purple;
 }
-.blackground img { /* Class Selector */
-    margin-top: 70px;
-    margin-left: 700px;
+
+.blackground .image-logo{
+    text-align: center;
+    padding: 20px;
 }
-.blackground h4 {
+
+.message-logo{
+    text-align: center;
+}
+
+.message-logo h4 {
     margin-top: 30px;
-    margin-left: 350px;
     color: aliceblue;
 }
-.blackground hr {
+.message-logo hr {
+    margin: auto;
     color: white;
-    margin-left: 350px;
     width: 60%;
 }
-.blackground h5 {
-    margin-left: 350px;
+.message-logo h5 {
+    margin-top: 20px;
+    margin-bottom: 20px;
     color: aliceblue;
     font-size: 14px;
 }
 .text-blackground1 {
+    margin: auto;
     width: 60%;
-    height: 80px;
+    padding: 10px;
     background-color: antiquewhite;
-    margin-left: 350px;
     margin-top: 10px;
 }
 .text-blackground1 h5 {
@@ -58,7 +56,8 @@ body{ /* Type Selector */
     text-align: center;
 }
 .menu-blackground hr {
-    margin-left: 630px;
+    margin: auto;
+    margin-top: 10px;
     width: 30%;
 }
 .text-blackground2 {

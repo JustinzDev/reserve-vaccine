@@ -14,7 +14,6 @@
     
 </head>
 <body>
-    <?php include('top-navbar.php');?>
     <div id="myModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-dialog-scrollable modal-xl">
             <div class="modal-content">
@@ -28,47 +27,21 @@
             </div>
         </div>
     </div>
-    <div class="card-group mt-3" id="contentdata"></div>
-
     <div class="blackground">
-        <img src="../best-of-vaccine/assets/img/Nhospital.png"width="500px" height="300px">
-        <h4>ระบบจองวัคซีนทางเลือก</h4>
-        <hr size="10">
-        <h5>สำหรับประชาชนทั่วไปที่มีความประสงค์ต้องการจะจองวัคซีนทางเลือก</h5>
+        <div class="image-logo"><img src="../best-of-vaccine/assets/img/Nhospital.png"width="500px" height="300px"></div>
+        <div class="message-logo">
+            <h4>ระบบจองวัคซีนทางเลือก</h4>
+            <hr size="10">
+            <h5>สำหรับประชาชนทั่วไปที่มีความประสงค์ต้องการจะจองวัคซีนทางเลือก</h5>
+        </div>
     </div>
-
     <div class="text-blackground1">
         <h5>รัฐบาลได้จัดสรรวัคซีนโควิด 19 ให้กับประชาชนโดย ไม่มีค่าใช้จ่าย</h4>
         <h5>ส่วนการจองวัคซีนโควิด 19 ของสถานพยาบาลเอกชนเป็นทางเลือกหนึ่งที่ประชาชนสามารถเลือกรับบริการได้ แต่ต้องชำระค่าใช้จ่ายเอง</h5>
     </div>
-
-    <div class="menu-blackground">
-        <hr>
-        <a href="#"> 
-            <img src="../best-of-vaccine/assets/img/menu1.png">
-        </a>
-        <a href="#"> 
-            <img src="../best-of-vaccine/assets/img/menu2.png">
-        </a>
-        <a href="#"> 
-            <img src="../best-of-vaccine/assets/img/menu3.png">
-        </a>
-        <hr>
+    <div id="contentdata">
+        <?php include('home.php');?>
     </div>
-    
-    <div class="text-blackground2">
-        <h2>ขอบคุณทุกท่านที่สนใจจองวัคซีนกับทางโรงพยาบาลของเรา</h2>
-        <h5>เนื่องจากขณะนี้มีผู้ให้ความสนใจจองวัคซีนครบตามจำนวนที่โรงพยาบาลคาดว่าจะได้รับจัดสรรค์จากองค์การเภสัชแล้ว ทางโรงพยาบาลจึงใคร่ขอปิด <br> การจองและช่องทางการชำระเงินทั้งหมด</h5>
-        <u>ตั้งแต่วันที่ 13 กระด้อกกระแด้กกระดาคม 2564 เวลา 12:00 น. (เที่ยง) เป็นต้นไป</u>
-        <hr>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
-
-   
-
 </body> 
 <script type="text/javascript">
     $(window).on('load',function(){
