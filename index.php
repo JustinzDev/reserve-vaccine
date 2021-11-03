@@ -13,6 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php include('top-navbar.php');?>
     <div id="myModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-dialog-scrollable modal-xl">
             <div class="modal-content">
@@ -27,6 +28,18 @@
         </div>
     </div>
     <div class="card-group mt-3" id="contentdata"></div>
+
+    <div class="blackground1">
+        <img src=".//assets/img/Nhospital.png"width="500px" height="300px">
+        <h4>ระบบจองวัคซีนทางเลือก</h4><hr size="10">
+        <h5>สำหรับประชาชนทั่วไปที่มีความประสงค์ต้องการจะจองวัคซีนทางเลือก</h5>
+    </div>
+    <div class="blackground2">
+        <h5>รัฐบาลได้จัดสรรวัคซีนโควิด 19 ให้กับประชาชนโดย ไม่มีค่าใช้จ่าย</h4>
+        <h5>ส่วนการจองวัคซีนโควิด 19 ของสถานพยาบาลเอกชนเป็นทางเลือกหนึ่งที่ประชาชนสามารถเลือกรับบริการได้ แต่ต้องชำระค่าใช้จ่ายเอง</h5>
+    </div>
+   
+
 </body> 
 <script type="text/javascript">
     $(window).on('load',function(){

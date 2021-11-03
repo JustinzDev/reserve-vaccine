@@ -9,11 +9,46 @@
 body{ /* Type Selector */
     margin: 0px;
 }
-
 .header-div{ /* Class Selector */
     background-color: red;
     width: 100%;
     height: 100%;
+}
+.blackground1 { /* Class Selector */
+    width: 100%;
+    height: 500px;
+    background-color: purple;
+}
+.blackground1 img { /* Class Selector */
+    margin-top: 70px;
+    margin-left: 700px;
+}
+.blackground1 h4 {
+    margin-top: 30px;
+    margin-left: 350px;
+    color: aliceblue;
+}
+.blackground1 hr {
+    color: white;
+    margin-left: 350px;
+    width: 60%;
+}
+.blackground1 h5 {
+    margin-left: 350px;
+    color: aliceblue;
+    font-size: 14px;
+}
+.blackground2 {
+    width: 60%;
+    height: 100px;
+    background-color: antiquewhite;
+    margin-left: 350px;
+    margin-top: 20px;
+}
+.blackground2 h5 {
+    font-size: 17px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 /* หน้าจองวัคซีน */
