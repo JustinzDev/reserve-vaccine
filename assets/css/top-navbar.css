@@ -1,14 +1,17 @@
-body {
-    margin: 0;
+* { /* Universal Selector */
     font-family: 'Kanit', sans-serif;
+    overflow: hidden;
+}
+
+body { /* Type Selector */
+    margin: 0;
 }
   
-.topnav {
-    overflow: hidden;
+.topnav { /* Class Selector */
     background-color: #0077ff;
 }
   
-.topnav a {
+.topnav a { /* Descendant Selector */
     float: left;
     display: block;
     color: #f2f2f2;
@@ -19,7 +22,7 @@ body {
     transition: 0.5s;
 }
   
-.topnav a:hover {
+.topnav a:hover { /* Pseudo-Class Selector */
     color: #77c9ff;
     transform: scale(1.06);
 }
@@ -29,7 +32,7 @@ body {
     color: white;
 }
 
-.topnav i {
+.topnav i { /* Descendant Selector */
     display: none;
 }
 
@@ -38,7 +41,7 @@ body {
     margin-right: 20px;
 }
 
-.topnav h1{
+.topnav h1{ /* Descendant Selector */
     position: absolute;
     color: white;
     font-size: 20px;

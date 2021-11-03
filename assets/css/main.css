@@ -1,9 +1,13 @@
-body{
-    margin: 0px;
+* { /* Universal Selector */
     font-family: 'Kanit', sans-serif;
+    overflow: hidden;
 }
 
-.header-div{
+body{ /* Type Selector */
+    margin: 0px;
+}
+
+.header-div{ /* Class Selector */
     background-color: red;
     width: 100%;
     height: 100%;
