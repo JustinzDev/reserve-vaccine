@@ -9,6 +9,10 @@ body{ /* Type Selector */
     margin: 0px;
 }
 
+footer{
+    text-align: center;
+}
+
 a:hover{ /* Pseudo-Class Selector */
     cursor: pointer;
 }

@@ -14,35 +14,40 @@
     
 </head>
 <body>
-    <div id="myModal" class="modal fade" tabindex="-1">
-        <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">รายละเอียดการฉีดวัคซีนทางเลือก</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <main>
+        <div id="myModal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">รายละเอียดการฉีดวัคซีนทางเลือก</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <?php include('detail-list.html');?>
+                    </div>
+                    <div class="modal-footer"> <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ยอมรับ</button> </div>
                 </div>
-                <div class="modal-body">
-                    <?php include('detail-list.html');?>
-                </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ยอมรับ</button> </div>
             </div>
         </div>
-    </div>
-    <div class="blackground">
-        <div class="image-logo"><img src="../best-of-vaccine/assets/img/Nhospital.png"width="500px" height="300px"></div>
-        <div class="message-logo">
-            <h4>ระบบจองวัคซีนทางเลือก</h4>
-            <hr size="10">
-            <h4 style="margin-bottom:30px;">สำหรับประชาชนทั่วไปที่มีความประสงค์ต้องการจะจองวัคซีนทางเลือก</h4>
+        <div class="blackground">
+            <div class="image-logo"><img src="../best-of-vaccine/assets/img/Nhospital.png"width="500px" height="300px"></div>
+            <div class="message-logo">
+                <h4>ระบบจองวัคซีนทางเลือก</h4>
+                <hr size="10">
+                <h4 style="margin-bottom:30px;">สำหรับประชาชนทั่วไปที่มีความประสงค์ต้องการจะจองวัคซีนทางเลือก</h4>
+            </div>
         </div>
-    </div>
-    <h5 style="margin-top:30px;">( วัคซีนจัดสรรโดยรัฐบาล )</h5>
-    <div class="text-blackground1">
-        <h5>[คำเตือน]</h5>
-        <h5>การฉีดวัคซีนจะไม่มีค่าใช้จ่าย ส่วนการจองวัคซีนโควิด 19 ของสถานพยาบาลเอกชนเป็นทางเลือกหนึ่งที่ประชาชนสามารถเลือกรับบริการได้ แต่ต้องชำระค่าใช้จ่ายเอง</h5>
-    </div>
-    <div id="contentdata">
-        <?php include('home.php');?>
-    </div>
+        <h5 style="margin-top:30px;">( วัคซีนจัดสรรโดยรัฐบาล )</h5>
+        <div class="text-blackground1">
+            <h5>[คำเตือน]</h5>
+            <h5>การฉีดวัคซีนจะไม่มีค่าใช้จ่าย ส่วนการจองวัคซีนโควิด 19 ของสถานพยาบาลเอกชนเป็นทางเลือกหนึ่งที่ประชาชนสามารถเลือกรับบริการได้ แต่ต้องชำระค่าใช้จ่ายเอง</h5>
+        </div>
+        <div id="contentdata">
+            <?php include('home.php');?>
+        </div>
+    </main>
+    <footer>
+        Edit by ....
+    </footer>
 </body> 
 <script type="text/javascript">
     $(window).on('load',function(){
