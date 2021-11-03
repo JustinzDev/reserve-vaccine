@@ -176,24 +176,24 @@ a:hover{
     text-align: center;
     
 }
-.divC #text1{ 
+#text1{ 
     margin-top: 20px;
     font-size: 18px;
     color: rgb(107, 107, 107);
     
 }
-.divC #text2{ 
+#text2{ 
     margin-top: 15px;
     font-size: 15px;
 }
-.divC #text3{ 
+#text3{ 
     margin-top: 5px;
 }
-.divC #text4{ 
+#text4{ 
     margin-top: 30px;
     font-size: 15px;
 }
-.divC #text5{ 
+#text5{ 
     margin-top: 5px;
 }
 .divD {
