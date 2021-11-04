@@ -134,41 +134,83 @@ h5 {
 
 /* หน้าจองวัคซีน */
 
-.Box_Input_vaccin01{ /* Class Selector */
-    width: 100%;
-    margin: auto;
-}
-.Box_Input_vaccin02{ /* Class Selector */
-    width: 80%;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
-    padding: 20px;
-    background-color: rgb(204, 204, 204);
-}
 
-.Contorl_form input{ /*Descendant selector*/
-    margin-top: 3px;
-}
-.Contorl_form textarea{ /*Descendant selector*/
-    resize: none;
-    width: 80%;
-}
+    .Box_Input_vaccin01{ /* Class Selector */
+        width: 100%;
+        margin: auto;
+        display: block;
+       
+    }
+    .Box_Input_vaccin02{ /* Class Selector */
+        width: auto;
+        margin: auto;
+        margin-top: 20px;
+        text-align: center;
+        padding: 20px;
+        background-color: rgb(243, 243, 243)
+    }
+    table{
+        width: 80%;
+        height: auto;
+        overflow-x:auto;
+        border: 1px solid black;
+    }
+    table tr{
+        display: inline-flexbox;  /**/
+    }
+    table td input{
+        width: 100px;
+    }
+    table tr td label {
+        width: 100px;
+       
+    }
+    table tr td textarea{
+        resize: none;
+        width: 50%;
+    }
+        
+    .Contorl_form input{ /*Descendant selector*/
+        margin-top: 3px;
+    }
+    .Contorl_form textarea{ /*Descendant selector*/
+        resize: none;
+        width:100%;
+    }
 
 @media screen and (min-width: 681px) {
     .Box_Input_vaccin01{ /* Class Selector */
         width: 100%;
         margin: auto;
+        margin-top: 20px;
         display: flex;
-        text-align: center;
+        text-align: left;
+        
     }
     .Box_Input_vaccin02{ /* Class Selector */
-        width: 80%;
+        width: auto;   
         padding: 50px;
         font-size: 20px;
+        margin-left: 30%;
         margin-bottom: 20px;
-        background-color: rgb(204, 204, 204);
+        text-align:left;  /**/
+        background-color: rgb(243, 243, 243)
     }
+
+    table{
+        padding: 30px;
+        border: 1px solid black;
+        
+    }
+    table td input{
+        width: 200px;
+    }
+
+    table tr td label {
+        width: 100%;     /**/
+        
+    }
+
     .Contorl_form  input{ /*Descendant selector*/
         margin-top: 3px;
     }
@@ -176,7 +218,9 @@ h5 {
         resize: none;
         width: 80%;
     }
+    
 }
+
 
 /* หน้าเช็ควัคซีน */
 .divA{  /* Class Selector */
