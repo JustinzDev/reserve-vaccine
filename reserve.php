@@ -40,10 +40,8 @@
             <main>
                 <div class="Box_Input_vaccin01">
                     <div class="Box_Input_vaccin02">
-                    
-                        <form action="#" method="GET">
+                        <form action="#" method="POST">
                             <div class="Contorl_form">
-                    
                                 <table>
                                     <tr>
                                         <td> <label>บัตรประชาชน </label> </td>
@@ -75,6 +73,7 @@
                                                 <option value="#">---Select----</option>
                                                 <option value="male">ชาย</option>
                                                 <option value="female">หญิง</option>
+                                                <option value="other">อื่นๆ</option>
                                             </select> 
                                         </td>
                                     </tr>
