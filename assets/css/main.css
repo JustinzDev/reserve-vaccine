@@ -143,7 +143,6 @@ h5 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: auto;
     margin-top: 30px;
     
 }
@@ -180,17 +179,22 @@ h5 {
     padding: 5px 10px;
 }
 
+.radiodiv{ /* Class selector*/
+    width: 15%;
+    margin: auto;
+}
+
 /* หน้าจองวัคซีน */
 @media screen and (max-width: 1024px) { /* Moblie */
     .Box_Input_vaccin02{
         width: 90%;
     }
-    
+
+    .radiodiv{ /* Class selector*/
+        width: 40%;
+        margin: auto;
+    }
 }
-
-
-
-
 
 /* หน้าเช็ควัคซีน */
 .divA{  /* Class Selector */
@@ -206,6 +210,16 @@ h5 {
     text-align: center;
     background-color: rgb(243, 243, 243);
 }
+
+.divC input{
+    width: 30%;
+    padding: 6px 10px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(151, 151, 151, 0.5);
+}
+
 .divC h3{ /* Descendant selector */
     text-align: center;
     
@@ -234,22 +248,18 @@ h5 {
     margin-top: 20px;
 
 }
-.divD .button1{ /* Class Selector */
-    background-color: rgb(255, 60, 60);
-    color: white;
-    font-size: 18px;
-    width: 100px;
-    height: 40px;
+
+.divD button{
+    width: 15%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(60, 211, 0, 0.5);
+    background-color: rgb(159, 255, 114);
+    padding: 5px 10px;
 }
-.divD .button2{ /* Class Selector */
-    background-color: rgb(255, 60, 60);
-    color: white;
-    font-size: 18px;
-    width: 100px;
-    height: 40px;
-}
+
 .divC #text6{ /* Descendant  Selector */
-    margin-top: 40px;
+    padding: 20px;
     font-size: 17px;
     color: tomato;
 }

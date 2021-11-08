@@ -77,8 +77,12 @@
                             <input type="text" name="disease" required/><br/>
 
                             <label for="disease">เคยรับการฉีควัคฉีนหรือยัง *</label><br/>
-                            <p>เคย &nbsp;&nbsp;<input type="radio" name="disease" value="1" required/>  </p> 
-                            <p>ไม่เคย<input type="radio" name="disease" value="0" required/> </p> 
+                            <div class="radiodiv">
+                                <input type="radio" name="disease" required/>
+                                <label>เคย</label><br/>
+                                <input style="margin-left:15px;" type="radio" name="disease" required/>
+                                <label>ไม่เคย</label><br/>
+                            </div>
 
                             <label for="vactype">วัคซีนที่ต้องการจอง *</label><br/>
                             <select name="vactype ">
@@ -102,10 +106,6 @@
 
                             <label for="needles">จำนวนที่ต้องการจอง *</label><br/>
                             <input type="number" name="needles" required  min="0" step="1"><br/>
-                            
-                             
-
-
                             <button type="submit">ยืนยันการจอง</button>
                         </form>
                     </div>

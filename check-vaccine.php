@@ -38,16 +38,41 @@
                 <h3>กรุณากรอกข้อมูลเพื่อค้นหาลำดับการจอง</h3>
                 <p id="text1">ข้อมูลที่ใช้สำหรับกรอกส่วนนี้เป็นข้อมูลส่วนบุคคลที่ได้ทำการลงทะเบียนการจองวัคซีน</p>
                 <label id="text2">เลขบัตรประชาชน 13 หลัก</label><br>
-                <input id="text3" type="text" size="20px"><br>
+                <input id="idcard" name="idcard" pattern="[0-9]{13}" type="text" size="20px" required><br>
                 <label id="text4">เบอร์โทรศัพท์มือถือที่ลงทะเบียน</label><br>
-                <input id="text5" type="text" size="20px"><br>
+                <input id="phone" pattern="(08|09|06)[0-9]{8}" type="tel" size="20px" required><br>
                 <div class="divD">
-                    <button class="button1">LOGIN</button>
-                    <button class="button2">RESET</button>
+                    <button id="login" type="submit">เข้าสู่ระบบ</button>
                 </div>  
-                <p id="text6">***ถ้ามีปัญหาในการใช้งานระบบโปรดเเจ้งหรือทำการติดต่อมาที่ฝ่ายสนับสนุน***</p>  
+                <h5 id="text6">***ถ้ามีปัญหาในการใช้งานระบบโปรดเเจ้งหรือทำการติดต่อมาที่ฝ่ายสนับสนุน***</h5>  
             </div>
         </div>
     </main>
 </body>
+<script>
+
+    document.getElementById("login").style.background="#C8C8C8";
+    document.getElementById("login").style.border="#C8C8C8";
+    document.getElementById("login").disabled = true;
+
+    $('#idcard, #phone').on('keyup', function () {
+        var checkidcard = document.getElementById("idcard"), idcardpattern = checkidcard.pattern;
+        var patternidcard = new RegExp(idcardpattern);
+        var resultpatternidcard = patternidcard.test(checkidcard.value);
+
+        var checkphone = document.getElementById("phone"), phonepattern = checkphone.pattern;
+        var patternphone = new RegExp(phonepattern);
+        var resultpatternphone = patternphone.test(checkphone.value);
+
+        if(!resultpatternidcard || !resultpatternphone){
+            document.getElementById("login").style.background="#C8C8C8";
+            document.getElementById("login").style.border="#C8C8C8";
+            document.getElementById("login").disabled = true;
+        }
+        else if(resultpatternidcard && resultpatternphone){
+            document.getElementById("login").style.background="rgb(159, 255, 114)";
+            document.getElementById("login").disabled = false;
+        }
+    });
+</script>
 </html>
