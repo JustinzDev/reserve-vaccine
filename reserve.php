@@ -41,137 +41,25 @@
                 <div class="Box_Input_vaccin01">
                     <div class="Box_Input_vaccin02">
                         <form action="#" method="POST">
-                            <div class="Contorl_form">
-                                <table>
-                                    <tr>
-                                        <td> <label>บัตรประชาชน </label> </td>
-                                    <tr>
-                                    <tr>
-                                        <td> <input type="text" name="idcard" pattern="[0-9]{13}" maxlength="13" required> </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label>ชื่อจริง</label></td>
-                                        <td><label>นามสกุล</label></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" name="fname" required></td>
-
-                                        <td><input type="text" name="lname" required></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label>อายุ</label></td>
-                                        <td><label>เพศ</label></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="number" name="age" min="0" step="1" required> </td>
-
-                                        <td>
-                                            <select name="sex">
-                                                <option value="#">---Select----</option>
-                                                <option value="male">ชาย</option>
-                                                <option value="female">หญิง</option>
-                                                <option value="other">อื่นๆ</option>
-                                            </select> 
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label>ที่อยู่</label></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="2"><textarea name="address" rows="4" cols="50" required> </textarea> </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label>วันเกิด</label></td>
-                                        <td><label>โรคประจำตัว</label></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="date" name="birth" required></td>
-
-                                        <td><input type="text" name="disease" required></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label>เบอร์โทร</label></td>
-                                        <td><label>อีเมล์</label></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="text" name="phone " pattern="[0-9]{10}" maxlength="10" required></td>
-
-                                        <td><input type="email" name="email" required></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label>เคยรับการฉีดวัคซีนหรือยัง</label></td>
-                        
-                                    </tr>
-                                    <tr>
-                                        <th><input type="radio" name="getvac" value="1" required><label>เคย</label><br></th>
-                        
-                                    </tr>
-                                    <tr>
-                                        <th><input type="radio" name="getvac" value="1" required><label> ไม่เคย</label><br></th>
-                                    </tr>
-                                   
-
-                                    <tr>
-                                        <td><label>ประเภทวัคซีนที่ต้องการจอง</label></td>
-                                        <td><label>สถานที่ต้องการฉีด</label></td>
-                                    </tr>
-
-                                    <tr>
-                                            <td>
-                                                <select name="vactype">
-                                                    <option value="#">---Select----</option>
-                                                    <option value="Sinovac">Sinovac</option>
-                                                    <option value="AstraZeneca">AstraZeneca</option>
-                                                    <option value="Pfizer">Pfizer</option>
-                                                    <option value="Moderna">Moderna</option>
-                                                    <option value="Sinopharm">Sinopharm</option>
-                                                </select> 
-                                            </td>
-
-                                            <td>
-                                                <select name="locationid ">
-                                                    <option value="#">---Select----</option>
-                                                    <option value="locationid_01">โคโนฮะงาคุเระ</option>
-                                                    <option value="locationid_02">คิริงาคุเระ</option>
-                                                    <option value="locationid_03">อิวะงาคุเระ</option>
-                                                    <option value="locationid_04">คุโมะงาคุเระ</option>
-                                                    <option value="locationid_05">ซึนะงาคุเระ</option>
-                                                </select>
-                                            </td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td><label>จำนวนที่ต้องการจอง</label></td>
-                                        
-                                    </tr>   
-                                    
-                                    
-                                    <tr>
-                                        <td><input type="number"  min="0" step="1" name="needles"></td>
-
-                                        
-                                    </tr>
-                                </table>
-
-                                <button style="margin-top:30px;" >ยืนยันการจอง</button>
-                                
-                            </div>
-
+                            <label for="idcard">บัตรประชาชน </label><br/>
+                            <input type="text" name="idcard" required/><br/>
+                            <label for="firstname">ชื่อจริง </label><br/>
+                            <input type="text" name="firstname" required/><br/>
+                            <label for="lastname">นามสกุล </label><br/>
+                            <input type="text" name="lastname" required/><br/>
+                            <label for="age">อายุ </label><br/>
+                            <input type="number" name="age" required/><br/>
+                            <label for="gender">เพศ </label><br/>
+                            <select name="gender">
+                                <option value="#">---Select----</option>
+                                <option value="male">ชาย</option>
+                                <option value="female">หญิง</option>
+                                <option value="other">อื่นๆ</option>
+                            </select> <br/>
+                            <button type="submit">ยืนยันการจอง</button>
                         </form>
-                    
                     </div>
                 </div>
             </main>
 </body>
-
 </html>
