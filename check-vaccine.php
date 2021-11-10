@@ -23,6 +23,7 @@
             });
         });
     </script>
+   
 </head>
 <body>
     <header>
@@ -37,10 +38,17 @@
             <div class="divC">
                 <h3>กรุณากรอกข้อมูลเพื่อค้นหาลำดับการจอง</h3>
                 <p id="text1">ข้อมูลที่ใช้สำหรับกรอกส่วนนี้เป็นข้อมูลส่วนบุคคลที่ได้ทำการลงทะเบียนการจองวัคซีน</p>
-                <label id="text2">เลขบัตรประชาชน 13 หลัก</label><br>
-                <input id="idcard" name="idcard" pattern="[0-9]{13}" type="text" size="20px" required><br>
+                <div class="container1">
+                    <div class="row">
+                        <div class='col-lg-12'>
+                            <label>กรอกเลขบัตรประชาชน 13 หลัก</label>
+                                <input type="text" id="idcard" class="form-control" maxlength="13">
+                            <span class="error"></span>
+                        </div>
+                    </div>
+                </div>
                 <label id="text4">เบอร์โทรศัพท์มือถือที่ลงทะเบียน</label><br>
-                <input id="phone" pattern="(08|09|06)[0-9]{8}" type="tel" size="20px" required><br>
+                <input id="phone" pattern="(08|09|06)[0-9]{8}" maxlength="10" type="tel" size="20px" required><br>
                 <div class="divD">
                     <button id="login" type="submit">เข้าสู่ระบบ</button>
                 </div>  
@@ -74,5 +82,35 @@
             document.getElementById("login").disabled = false;
         }
     });
+
+    $(document).ready(function(){
+  $('#idcard').on('keyup',function(){
+    if($.trim($(this).val()) != '' && $(this).val().length == 13){
+      id = $(this).val().replace(/-/g,"");
+      var result = Script_checkID(id);
+      if(result === false){
+        $('span.error').removeClass('true').text('เลขบัตรผิด');
+      }else{
+        $('span.error').addClass('true').text('เลขบัตรถูกต้อง');
+      }
+    }else{
+      $('span.error').removeClass('true').text('');
+    }
+  })
+});
+
+    function Script_checkID(id){
+        if(! IsNumeric(id)) return false;
+        if(id.substring(0,1)== 0) return false;
+        if(id.length != 13) return false;
+        for(i=0, sum=0; i < 12; i++)
+            sum += parseFloat(id.charAt(i))*(13-i);
+        if((11-sum%11)%10!=parseFloat(id.charAt(12))) return false;
+        return true;
+    }
+    function IsNumeric(input){
+        var RE = /^-?(0|INF|(0[1-7][0-7]*)|(0x[0-9a-fA-F]+)|((0|[1-9][0-9]*|(?=[\.,]))([\.,][0-9]+)?([eE]-?\d+)?))$/;
+        return (RE.test(input));
+    }
 </script>
 </html>

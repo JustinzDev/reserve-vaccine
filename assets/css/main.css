@@ -9,7 +9,7 @@ body{ /* Type Selector */
     margin: 0px;
 }
 
-footer{
+footer{ /* Type Selector */
     text-align: center;
 }
 
@@ -24,7 +24,7 @@ a:hover{ /* Pseudo-Class Selector */
     margin-top: 20px;
 }
 
-.menutype a{
+.menutype a{ { /*Descendant selector*/
     border: 1px solid #000;
     padding: 10px 30px;
 }
@@ -66,7 +66,7 @@ a:hover{ /* Pseudo-Class Selector */
     background-color: antiquewhite;
     margin-top: 10px;
 }
-h5 {
+h5 { /* Type Selector */
     font-size: 17px;
     text-align: center;
     color: blueviolet;
@@ -80,7 +80,7 @@ h5 {
     color: rgb(255, 42, 42);
 }
 
-.menu-blackground {
+.menu-blackground { /* Class Selector */
     text-align: center;
 }
 
@@ -105,9 +105,9 @@ h5 {
     color: red;
     font-size: 20px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) { /* Moblie */
 
-    .menutype{
+    .menutype{ /* Class Selector */
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -171,8 +171,8 @@ h5 {
     border: 1px solid rgba(151, 151, 151, 0.5);
 }
 
-.Box_Input_vaccin02 button{
-    margin-top: 10px;
+.Box_Input_vaccin02 button{ /*Descendant selector*/
+    margin-top: 10px; 
     margin-bottom: 10px;
     border: 1px solid rgba(60, 211, 0, 0.5);
     background-color: rgb(159, 255, 114);
@@ -196,6 +196,14 @@ h5 {
     }
 }
 
+.container1 input{ /*Descendant selector*/
+    width: 30%;
+    padding: 6px 10px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(151, 151, 151, 0.5);
+}
 /* หน้าเช็ควัคซีน */
 .divA{  /* Class Selector */
     margin: auto;
@@ -211,14 +219,20 @@ h5 {
     background-color: rgb(243, 243, 243);
 }
 
-.divC input{
+.divC input{ /*Descendant selector*/
     width: 30%;
     padding: 6px 10px;
-    text-align: center;
+    margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     border: 1px solid rgba(151, 151, 151, 0.5);
 }
+.error{ /* Class Selector */
+    color:#F00;
+  }
+.error.true{  /* Class Selector */
+    color:#6bc900;
+  }
 
 .divC h3{ /* Descendant selector */
     text-align: center;
@@ -249,7 +263,7 @@ h5 {
 
 }
 
-.divD button{
+.divD button{ /* Descendant selector */
     width: 15%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -264,9 +278,9 @@ h5 {
     color: tomato;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) { /* Moblie */
 
-    .divA{
+    .divA{ /* Class Selector */
         width: 100%;
     }
 
