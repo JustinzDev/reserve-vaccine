@@ -87,7 +87,7 @@
                             <div class="radiodiv">
                                 <input type="radio" name="disease" required/>
                                 <label>เคย</label><br/>
-                                <input style="margin-left:15px;" type="radio" name="disease" required/>
+                                <input style="margin-left:15px"; type="radio" name="disease" required/>
                                 <label>ไม่เคย</label><br/>
                             </div>
 
@@ -110,11 +110,14 @@
                                 <option value="place_04">รพ.4</option>
                                 <option value="place_05">รพ.5</option>
                             </select> <br/>
-                            <label for="needles">จำนวนวัคซีนที่ต้องการจอง *</label><br/>
-                            <input type="radio" name="needles" required/>
-                            <label>Full dose (2 เข็ม)</label></br>
-                            <input  type="radio" name="needles" required/>
-                            <label>Half dose (1 เข็ม)</label></br>                          
+                            <div class="abc">
+                                <label for="needles">จำนวนวัคซีนที่ต้องการจอง *</label><br/>
+                                <input type="radio" name="needles" required/>
+                                <label style="margin-left:-130px";> Full dose (2 เข็ม)</label></br>
+                                <input type="radio" name="needles" required/>
+                                <label style="margin-left:-130px";> Half dose (1 เข็ม)</label></br>
+                            </div>
+                                                         
                             <button type="submit">ยืนยันการจอง</button>
                         </form>
                     </div>

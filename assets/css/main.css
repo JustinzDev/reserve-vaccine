@@ -194,7 +194,16 @@ h5 { /* Type Selector */
         width: 40%;
         margin: auto;
     }
+    .abc input{ /*Descendant selector*/
+        width: 85%;
+        margin: auto;
+    }
 }
+
+.abc input{ /*Descendant selector*/
+    margin-left: -120px;
+}
+
 
 .container1 input{ /*Descendant selector*/
     width: 30%;
