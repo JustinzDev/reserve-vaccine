@@ -25,29 +25,28 @@
     </script>
 
     <script>
-
-        async function getDataFromAPI(){
-
+        let requestserver;
+        function sendRequest(){
+            requestserver = new XMLHttpRequest();
+            requestserver.onreadystatechange = showResult;
             let idcard = document.getElementById('idcard').value;
             let phone = document.getElementById('phone').value;
+            let data = "api/check-queue?user_idcard="+idcard+"&user_phone="+phone;
+            requestserver.open("GET", data);
+            requestserver.send();
+        }
 
-            let link = "<?php echo $mylocalhost;?>/api/check-queue?user_idcard="+idcard+"&user_phone="+phone;
-            let response = await fetch(link);
-            let rawData = await response.text();
-            let objectData = JSON.parse(rawData);
-            let resultdata = document.getElementById('result-data');
-            if(objectData.length == 0){
-                resultdata.innerHTML = "ไม่พบข้อมูล!";
-                resultdata.style.color = "red";
-            }
-            else{
-                document.getElementById('form-control-input').style.display = "none";
-                let content = "บัตรประชาชน: "+objectData[0].res_idcard+"<br/> \
-                "+"ชื่อ-นามสกุล: "+objectData[0].res_fname+" "+objectData[0].res_lname;
-                let result = document.getElementById('show-Result');
-                let span = document.createElement('span');
-                span.innerHTML = content;
-                result.appendChild(span);
+        function showResult(){
+            if(requestserver.readyState == 4 && requestserver.status == 200){
+
+                if(requestserver.responseText == "Not Found"){
+                    let notfound = document.getElementById('result-data');
+                    notfound.innerHTML = "ไม่พบข้อมูล!";
+                    notfound.style.color = "red";
+                }
+                else{
+                    let result = document.getElementById('show-Result').innerHTML = requestserver.responseText;
+                }
             }
         }
     </script>
@@ -79,7 +78,7 @@
                 <label id="text4">เบอร์โทรศัพท์มือถือที่ลงทะเบียน</label><br>
                 <input id="phone" name="user_phone" pattern="(08|09|06)[0-9]{8}" maxlength="10" type="tel" size="20px" required><br>
                 <div class="divD">
-                    <button id="login" type="submit" onclick="getDataFromAPI()">เข้าสู่ระบบ</button>
+                    <button id="login" type="submit" onclick="sendRequest()">เข้าสู่ระบบ</button>
                 </div>  
                 <h5 id="text6">***ถ้ามีปัญหาในการใช้งานระบบโปรดเเจ้งหรือทำการติดต่อมาที่ฝ่ายสนับสนุน***</h5>  
             </div>

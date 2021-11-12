@@ -2,13 +2,15 @@
     include('connect.php');
     include('setlink.php');
     
-
     $sql = "SELECT * FROM reserves INNER JOIN queues ON reserves.res_idcard = queues.que_idcard WHERE reserves.res_idcard = '".$_GET['user_idcard']."' AND reserves.res_phone = '".$_GET['user_phone']."'";
     $query = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_array($query);
 
-    $resultArray = array();
-    while($row = mysqli_fetch_array($query)){
-        array_push($resultArray, $row);
+    if($result){
+        echo "เลขบัตรประชาชน: ".$result['res_idcard']."<br/>"
+        ."ชื่อ-นามสกุล: ".$result['res_fname']." ".$result['res_lname'];
     }
-    echo json_encode($resultArray);
+    else{
+        echo "Not Found";
+    }
 ?>
