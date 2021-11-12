@@ -75,7 +75,8 @@
                             <textarea name="address" cols="30" rows="10"></textarea> <br>
 
                             <label for="phone ">เบอร์โทร *</label><br/>
-                            <input type="text" name="phone" required  pattern="[0-9]{10}" maxlength="10"><br/>
+                            <input type="text" name="phone"  id="numberphone" pattern="(08|09|06)[0-9]{8}" maxlength="10" required><br/>
+                            <span id="phonestatus"></span><br/>
 
                             <label for="email">อีเมล์ *</label><br/>
                             <input type="email" name="email" required/><br/>
@@ -136,6 +137,20 @@
 </body>
 <script> 
     $(document).ready(function(){
+
+        $('#numberphone').on('keyup', function(){
+            var checkphone = document.getElementById("numberphone"), phonepattern = checkphone.pattern;
+            var patternphone = new RegExp(phonepattern);
+            var resultpatternphone = patternphone.test(checkphone.value);
+
+            if(!resultpatternphone){
+                var phonestatus = document.getElementById('phonestatus').innerHTML = "รูปแบบเบอร์โทรศัพท์ผิดพลาด";
+                var phonestatus = document.getElementById('phonestatus').style.color = "red";
+            }
+            else{
+                var phonestatus = document.getElementById('phonestatus').innerHTML = "";
+            }
+        })
         $('#idcard').on('keyup',function(){
             if($.trim($(this).val()) != '' && $(this).val().length == 13){
             id = $(this).val().replace(/-/g,"");
