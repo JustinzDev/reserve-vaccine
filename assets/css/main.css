@@ -153,6 +153,11 @@ h5 { /* Type Selector */
     background-color: rgba(219, 219, 219, 0.5);
 }
 
+.Box_Input_vaccin02 textarea{
+    border: 1px solid rgba(151, 151, 151, 0.5);
+    resize: none;
+}
+
 .Box_Input_vaccin02 input{ /*Descendant selector*/
     width: 30%;
     padding: 6px 10px;

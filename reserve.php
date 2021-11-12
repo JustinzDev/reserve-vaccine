@@ -135,21 +135,21 @@
             </main>
 </body>
 <script> 
-   $(document).ready(function(){
-  $('#idcard').on('keyup',function(){
-    if($.trim($(this).val()) != '' && $(this).val().length == 13){
-      id = $(this).val().replace(/-/g,"");
-      var result = Script_checkID(id);
-      if(result === false){
-        $('span.error').removeClass('true').text('เลขบัตรผิด');
-      }else{
-        $('span.error').addClass('true').text('เลขบัตรถูกต้อง');
-      }
-    }else{
-      $('span.error').removeClass('true').text('');
-    }
-  })
-});
+    $(document).ready(function(){
+        $('#idcard').on('keyup',function(){
+            if($.trim($(this).val()) != '' && $(this).val().length == 13){
+            id = $(this).val().replace(/-/g,"");
+            var result = Script_checkID(id);
+            if(result === false){
+                $('span.error').removeClass('true').text('เลขบัตรผิด');
+            }else{
+                $('span.error').addClass('true').text('เลขบัตรถูกต้อง');
+            }
+            }else{
+            $('span.error').removeClass('true').text('');
+            }
+        })
+    });
 
     function Script_checkID(id){
         if(! IsNumeric(id)) return false;
