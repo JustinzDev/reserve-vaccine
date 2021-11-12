@@ -45,11 +45,11 @@
                             <div class="row">
                                 <div class='col-lg-12'>
                                     <label>กรอกเลขบัตรประชาชน 13 หลัก</label>
-                                        <input type="text" id="idcard" class="form-control" maxlength="13">
-                                            <span class="error"></span>
-                                        </div>
-                                    </div>
+                                    <input type="text" id="idcard" class="form-control" maxlength="13">
+                                    <span class="error"></span>
                                 </div>
+                            </div>
+                        </div>
 
                             <label for="firstname">ชื่อจริง *</label><br/>
                             <input type="text" name="firstname" required  pattern="^[ก-๏\s]+$"><br/>
@@ -81,7 +81,17 @@
                             <input type="email" name="email" required/><br/>
 
                             <label for="disease">โรคประจำตัว *</label><br/>
-                            <input type="text" name="disease" required/><br/>
+                            <select name="vactype ">
+                                <option value="#">---Select----</option>
+                                <option value="disease1">โรคทางเดินหายใจเรื้อรังรุนแรง</option>
+                                <option value="disease2">โรคหัวใจและหลอดเลือด</option>
+                                <option value="disease3">โรคไตเรื้อรัง</option>
+                                <option value="disease4">โรคหลอดเลือดสมอง</option>
+                                <option value="disease5">โรคมะเร็ง</option>
+                                <option value="disease6">โรคเบาหวาน</option>
+                                <option value="disease7">โรคอ้วน</option>
+                                <option value="disease8">อื่นๆ</option>
+                            </select> <br/>
 
                             <label for="disease">เคยรับการฉีควัคฉีนหรือยัง *</label><br/>
                             <div class="radiodiv">
@@ -110,12 +120,12 @@
                                 <option value="place_04">รพ.4</option>
                                 <option value="place_05">รพ.5</option>
                             </select> <br/>
-                            <div class="abc">
+                            <div class="needles">
                                 <label for="needles">จำนวนวัคซีนที่ต้องการจอง *</label><br/>
-                                <input type="radio" name="needles" required/>
-                                <label style="margin-left:-130px";> Full dose (2 เข็ม)</label></br>
-                                <input type="radio" name="needles" required/>
-                                <label style="margin-left:-130px";> Half dose (1 เข็ม)</label></br>
+                                <input style="margin-left:15px" type="radio" name="needles" required/>
+                                <label> Full dose (2 เข็ม)</label></br>
+                                <input style="margin-left:15px" type="radio" name="needles" required/>
+                                <label> Half dose (1 เข็ม)</label></br>
                             </div>
                                                          
                             <button type="submit">ยืนยันการจอง</button>

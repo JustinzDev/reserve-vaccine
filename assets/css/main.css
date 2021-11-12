@@ -184,26 +184,29 @@ h5 { /* Type Selector */
     margin: auto;
 }
 
+.needles { /*Descendant selector*/
+    width: 20%;
+    margin: auto;
+}
+
+
 /* หน้าจองวัคซีน */
 @media screen and (max-width: 1024px) { /* Moblie */
     .Box_Input_vaccin02{
         width: 90%;
+        margin: auto;
     }
 
     .radiodiv{ /* Class selector*/
         width: 40%;
         margin: auto;
     }
-    .abc input{ /*Descendant selector*/
-        width: 85%;
+    .needles { /*Descendant selector*/
+        width: 60%;
         margin: auto;
     }
-}
 
-.abc input{ /*Descendant selector*/
-    margin-left: -120px;
 }
-
 
 .container1 input{ /*Descendant selector*/
     width: 30%;
