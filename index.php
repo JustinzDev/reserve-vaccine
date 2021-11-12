@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="blackground">
-            <div class="image-logo"><img src="../best-of-vaccine/assets/img/Nhospital.png"width="500px" height="300px"></div>
+            <div class="image-logo"><img src="../best-of-vaccine/assets/img/logo.png"width="500px" height="300px"></div>
             <div class="message-logo">
                 <h4>ระบบจองวัคซีนทางเลือก</h4>
                 <hr size="10">
