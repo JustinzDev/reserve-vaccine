@@ -27,13 +27,13 @@
             astraZeneca.innerHTML = "AstraZeneca: "+objectData[1]+" คน";
 
             let pifzer = document.getElementById('pifzer');
-            pifzer.innerHTML = "pifzer: "+objectData[2]+" คน";
+            pifzer.innerHTML = "Pifzer: "+objectData[2]+" คน";
 
             let moderna = document.getElementById('moderna');
-            moderna.innerHTML = "moderna: "+objectData[3]+" คน";
+            moderna.innerHTML = "Moderna: "+objectData[3]+" คน";
 
             let sinopharm = document.getElementById('sinopharm');
-            sinopharm.innerHTML = "sinopharm: "+objectData[3]+" คน";
+            sinopharm.innerHTML = "Sinopharm: "+objectData[3]+" คน";
         }
         getDataFromAPI();
     </script>
