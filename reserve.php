@@ -74,12 +74,18 @@
                             <textarea name="user_address" cols="30" rows="10"></textarea> <br>
 
                             <label for="phone ">เบอร์โทร *</label><br/>
+<<<<<<< HEAD
                             <input type="text" name="user_phone" required  pattern="[0-9]{10}" maxlength="10"><br/>
+=======
+                            <input type="text" name="phone"  id="numberphone" pattern="(08|09|06)[0-9]{8}" maxlength="10" required><br/>
+                            <span id="phonestatus"></span><br/>
+>>>>>>> d6e68333521a11d3345094e51bb6332dcc416577
 
                             <label for="email">อีเมล์ *</label><br/>
                             <input type="email" name="user_email" required/><br/>
 
                             <label for="disease">โรคประจำตัว *</label><br/>
+<<<<<<< HEAD
                             <select name="user_disease">
                                 <option value="ไม่มี">ไม่มี</option>
                                 <option value="โรคทางเดินหายใจเรื้อรังรุนแรง">โรคทางเดินหายใจเรื้อรังรุนแรง</option>
@@ -91,6 +97,9 @@
                                 <option value="โรคอ้วน">โรคอ้วน</option>
                                 <option value="อื่นๆ">อื่นๆ</option>
                             </select> <br/>
+=======
+                            <input type="text" name="disease" required  pattern="^[ก-๏\s]+$"><br/>
+>>>>>>> d6e68333521a11d3345094e51bb6332dcc416577
 
                             <label for="disease">เคยรับการฉีควัคฉีนหรือยัง *</label><br/>
                             <div class="radiodiv">
@@ -133,6 +142,20 @@
 </body>
 <script> 
     $(document).ready(function(){
+
+        $('#numberphone').on('keyup', function(){
+            var checkphone = document.getElementById("numberphone"), phonepattern = checkphone.pattern;
+            var patternphone = new RegExp(phonepattern);
+            var resultpatternphone = patternphone.test(checkphone.value);
+
+            if(!resultpatternphone){
+                var phonestatus = document.getElementById('phonestatus').innerHTML = "รูปแบบเบอร์โทรศัพท์ผิดพลาด";
+                var phonestatus = document.getElementById('phonestatus').style.color = "red";
+            }
+            else{
+                var phonestatus = document.getElementById('phonestatus').innerHTML = "";
+            }
+        })
         $('#idcard').on('keyup',function(){
             if($.trim($(this).val()) != '' && $(this).val().length == 13){
             id = $(this).val().replace(/-/g,"");
