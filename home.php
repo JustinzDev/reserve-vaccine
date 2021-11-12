@@ -37,7 +37,6 @@
             <hr>
         </div>
     </header>
-    
     <main>
         <div class="text-blackground2">
             <h2>ขอบคุณทุกท่านที่สนใจจองวัคซีนกับทางโรงพยาบาลของเรา</h2>
