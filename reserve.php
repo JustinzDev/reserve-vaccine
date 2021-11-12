@@ -82,17 +82,7 @@
                             <input type="email" name="email" required/><br/>
 
                             <label for="disease">โรคประจำตัว *</label><br/>
-                            <select name="vactype ">
-                                <option value="#">---Select----</option>
-                                <option value="disease1">โรคทางเดินหายใจเรื้อรังรุนแรง</option>
-                                <option value="disease2">โรคหัวใจและหลอดเลือด</option>
-                                <option value="disease3">โรคไตเรื้อรัง</option>
-                                <option value="disease4">โรคหลอดเลือดสมอง</option>
-                                <option value="disease5">โรคมะเร็ง</option>
-                                <option value="disease6">โรคเบาหวาน</option>
-                                <option value="disease7">โรคอ้วน</option>
-                                <option value="disease8">อื่นๆ</option>
-                            </select> <br/>
+                            <input type="text" name="disease" required  pattern="^[ก-๏\s]+$"><br/>
 
                             <label for="disease">เคยรับการฉีควัคฉีนหรือยัง *</label><br/>
                             <div class="radiodiv">
