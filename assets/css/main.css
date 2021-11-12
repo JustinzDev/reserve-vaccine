@@ -105,6 +105,18 @@ h5 { /* Type Selector */
     color: red;
     font-size: 20px;
 }
+
+.list-of-vaccine{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.list-of-vaccine h4{
+    padding: 10px;
+}
+
 @media screen and (max-width: 1024px) { /* Moblie */
 
     .menutype{ /* Class Selector */

@@ -12,6 +12,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     
+
+    <script>
+        async function getDataFromAPI(){
+            let response = await fetch('api/list-vaccine');
+            let rawData = await response.text();
+            let objectData = JSON.parse(rawData);
+            console.log(objectData);
+
+            let sinovac = document.getElementById('sinovac');
+            sinovac.innerHTML = "Sinovac: "+objectData[0]+" คน";
+
+            let astraZeneca = document.getElementById('astraZeneca');
+            astraZeneca.innerHTML = "AstraZeneca: "+objectData[1]+" คน";
+
+            let pifzer = document.getElementById('pifzer');
+            pifzer.innerHTML = "pifzer: "+objectData[2]+" คน";
+
+            let moderna = document.getElementById('moderna');
+            moderna.innerHTML = "moderna: "+objectData[3]+" คน";
+
+            let sinopharm = document.getElementById('sinopharm');
+            sinopharm.innerHTML = "sinopharm: "+objectData[3]+" คน";
+        }
+        getDataFromAPI();
+    </script>
+
 </head>
 <body>
     <main>
@@ -40,6 +66,13 @@
         <div class="text-blackground1">
             <h5>[คำเตือน]</h5>
             <h5>การฉีดวัคซีนจะไม่มีค่าใช้จ่าย ส่วนการจองวัคซีนโควิด 19 ของสถานพยาบาลเอกชนเป็นทางเลือกหนึ่งที่ประชาชนสามารถเลือกรับบริการได้ แต่ต้องชำระค่าใช้จ่ายเอง</h5>
+        </div>
+        <div class="list-of-vaccine">
+            <h4 id="sinovac"></h4><br/>
+            <h4 id="astraZeneca"></h4><br/>
+            <h4 id="pifzer"></h4><br/>
+            <h4 id="moderna"></h4><br/>
+            <h4 id="sinopharm"></h4><br/>
         </div>
         <div id="contentdata">
             <?php include('home.php');?>

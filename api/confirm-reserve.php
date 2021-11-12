@@ -23,6 +23,11 @@
     $user_locationid = $_POST['user_locationid'];
     $user_needles = $_POST['user_needles'];
 
+    if($user_idcard == "" || $user_phone == "" || $user_email == "" || $user_fname == "" || $user_lname == ""){
+        header("location:$mylocalhost");
+        exit();
+    }
+
     $checkidcard = "SELECT res_idcard FROM reserves WHERE res_idcard = '".$user_idcard."'";
     $queryidcard = mysqli_query($conn, $checkidcard);
     $resultidcard = mysqli_fetch_array($queryidcard);
