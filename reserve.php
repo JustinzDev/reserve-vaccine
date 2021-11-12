@@ -40,70 +40,68 @@
             <main>
                 <div class="Box_Input_vaccin01">
                     <div class="Box_Input_vaccin02">
-                        <form action="#" method="POST">
-                        <div class="container1">
-                            <div class="row">
-                                <div class='col-lg-12'>
-                                    <label>กรอกเลขบัตรประชาชน 13 หลัก</label>
-                                    <input type="text" id="idcard" class="form-control" maxlength="13">
-                                    <span class="error"></span>
+                        <form action="<?php echo $mylocalhost;?>api/confirm-reserve" method="POST">
+                            <div class="container1">
+                                <div class="row">
+                                    <div class='col-lg-12'>
+                                        <label>กรอกเลขบัตรประชาชน 13 หลัก</label>
+                                        <input type="text" id="idcard" name="user_idcard" class="form-control" maxlength="13" required />
+                                        <span class="error"></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
                             <label for="firstname">ชื่อจริง *</label><br/>
-                            <input type="text" name="firstname" required  pattern="^[ก-๏\s]+$"><br/>
+                            <input type="text" name="user_fname"  pattern="^[ก-๏\s]+$" required><br/>
 
                             <label for="lastname">นามสกุล *</label><br/>
-                            <input type="text" name="lastname" required pattern="pattern="^[ก-๏\s]+$""><br/>
+                            <input type="text" name="user_lname" pattern="^[ก-๏\s]+$" required><br/>
 
                             <label for="age">อายุ *</label><br/>
-                            <input type="number" name="age" required min="0" step="1" ><br/>
+                            <input type="number" name="user_age" min="0" step="1" required><br/>
 
                             <label for="birth">วันเกิด *</label><br/>
-                            <input type="date" name="birth" required/><br/>
+                            <input type="date" name="user_birthday" required/><br/>
 
                             <label for="gender">เพศ *</label><br/>
-                            <select name="gender">
-                                <option value="#">---Select----</option>
+                            <select name="user_gender">
                                 <option value="male">ชาย</option>
                                 <option value="female">หญิง</option>
                                 <option value="other">อื่นๆ</option>
                             </select> <br/>
 
                             <label for="address">ที่อยู่ *</label><br/>
-                            <textarea name="address" cols="30" rows="10"></textarea> <br>
+                            <textarea name="user_address" cols="30" rows="10"></textarea> <br>
 
                             <label for="phone ">เบอร์โทร *</label><br/>
-                            <input type="text" name="phone" required  pattern="[0-9]{10}" maxlength="10"><br/>
+                            <input type="text" name="user_phone" required  pattern="[0-9]{10}" maxlength="10"><br/>
 
                             <label for="email">อีเมล์ *</label><br/>
-                            <input type="email" name="email" required/><br/>
+                            <input type="email" name="user_email" required/><br/>
 
                             <label for="disease">โรคประจำตัว *</label><br/>
-                            <select name="vactype ">
-                                <option value="#">---Select----</option>
-                                <option value="disease1">โรคทางเดินหายใจเรื้อรังรุนแรง</option>
-                                <option value="disease2">โรคหัวใจและหลอดเลือด</option>
-                                <option value="disease3">โรคไตเรื้อรัง</option>
-                                <option value="disease4">โรคหลอดเลือดสมอง</option>
-                                <option value="disease5">โรคมะเร็ง</option>
-                                <option value="disease6">โรคเบาหวาน</option>
-                                <option value="disease7">โรคอ้วน</option>
-                                <option value="disease8">อื่นๆ</option>
+                            <select name="user_disease">
+                                <option value="ไม่มี">ไม่มี</option>
+                                <option value="โรคทางเดินหายใจเรื้อรังรุนแรง">โรคทางเดินหายใจเรื้อรังรุนแรง</option>
+                                <option value="โรคหัวใจและหลอดเลือด">โรคหัวใจและหลอดเลือด</option>
+                                <option value="โรคไตเรื้อรัง">โรคไตเรื้อรัง</option>
+                                <option value="โรคหลอดเลือดสมอง">โรคหลอดเลือดสมอง</option>
+                                <option value="โรคมะเร็ง">โรคมะเร็ง</option>
+                                <option value="โรคเบาหวาน">โรคเบาหวาน</option>
+                                <option value="โรคอ้วน">โรคอ้วน</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
                             </select> <br/>
 
                             <label for="disease">เคยรับการฉีควัคฉีนหรือยัง *</label><br/>
                             <div class="radiodiv">
-                                <input type="radio" name="disease" required/>
+                                <input type="radio" name="user_getvac" value="0" required/>
                                 <label>เคย</label><br/>
-                                <input style="margin-left:15px"; type="radio" name="disease" required/>
+                                <input style="margin-left:15px"; type="radio" name="user_getvac" value="1" required/>
                                 <label>ไม่เคย</label><br/>
                             </div>
 
                             <label for="vactype">วัคซีนที่ต้องการจอง *</label><br/>
-                            <select name="vactype ">
-                                <option value="#">---Select----</option>
+                            <select name="user_vactype">
                                 <option value="Sinovac">Sinovac</option>
                                 <option value="AstraZeneca">AstraZeneca</option>
                                 <option value="Pifzer">Pifzer</option>
@@ -112,19 +110,18 @@
                             </select> <br/>
 
                             <label for="locationid">สถานที่ต้องการเข้ารับฉีควัคซีน *</label><br/>
-                            <select name="locationid">
-                                <option value="#">---Select----</option>
-                                <option value="place_01">รพ.1</option>
-                                <option value="place_02">รพ.2</option>
-                                <option value="place_03">รพ.3</option>
-                                <option value="place_04">รพ.4</option>
-                                <option value="place_05">รพ.5</option>
+                            <select name="user_locationid">
+                                <option value="1">รพ.1</option>
+                                <option value="2">รพ.2</option>
+                                <option value="3">รพ.3</option>
+                                <option value="4">รพ.4</option>
+                                <option value="5">รพ.5</option>
                             </select> <br/>
                             <div class="needles">
                                 <label for="needles">จำนวนวัคซีนที่ต้องการจอง *</label><br/>
-                                <input style="margin-left:15px" type="radio" name="needles" required/>
+                                <input style="margin-left:15px" type="radio" name="user_needles" value="2" required/>
                                 <label> Full dose (2 เข็ม)</label></br>
-                                <input style="margin-left:15px" type="radio" name="needles" required/>
+                                <input style="margin-left:15px" type="radio" name="user_needles" value="1" required/>
                                 <label> Half dose (1 เข็ม)</label></br>
                             </div>
                                                          
