@@ -1,6 +1,8 @@
 <?php
+    session_start();
     include('connect.php');
     include('setlink.php');
+    error_reporting(0);
 
     echo '
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -97,26 +99,53 @@
         exit();
     }
 
-    $addreserve = "INSERT INTO reserves (res_idcard, res_fname, res_lname, res_age, res_address, res_phone, res_sex, res_birth, res_disease, res_email, res_getvac, res_vactype, res_needles, res_locationid) 
-    VALUES ('".$user_idcard."', '".$user_fname."', '".$user_lname."', '".$user_age."', '".$user_address."', '".$user_phone."', '".$user_gender."', 
-    '".$user_birthday."', '".$user_disease."', '".$user_email."', '".$user_getvac."', '".$user_vactype."', '".$user_needles."', '".$user_locationid."')";
-    $queryaddreserve = mysqli_query($conn, $addreserve);
-    if($queryaddreserve){
+    if($_GET['status'] == "new"){
+        $addreserve = "INSERT INTO reserves (res_idcard, res_fname, res_lname, res_age, res_address, res_phone, res_sex, res_birth, res_disease, res_email, res_getvac, res_vactype, res_needles, res_locationid) 
+        VALUES ('".$user_idcard."', '".$user_fname."', '".$user_lname."', '".$user_age."', '".$user_address."', '".$user_phone."', '".$user_gender."', 
+        '".$user_birthday."', '".$user_disease."', '".$user_email."', '".$user_getvac."', '".$user_vactype."', '".$user_needles."', '".$user_locationid."')";
+        $queryaddreserve = mysqli_query($conn, $addreserve);
+        if($queryaddreserve){
 
-        $queue_no = 1001;
-        $result = mysqli_query($conn, "SELECT * FROM queues WHERE locationid = '".$user_locationid."'");
-        $rowhave = mysqli_num_rows($result);
-        if($rowhave > 0) $queue_no += $rowhave;
-        $addqueue2 = "INSERT INTO queues SET que_no = '".$queue_no."', que_idcard = '".$user_idcard."', locationid = '".$user_locationid."'";
-        $queryaddqueue2 = mysqli_query($conn, $addqueue2);
+            $queue_no = 1001;
+            $result = mysqli_query($conn, "SELECT * FROM queues WHERE locationid = '".$user_locationid."'");
+            $rowhave = mysqli_num_rows($result);
+            if($rowhave > 0) $queue_no += $rowhave;
+            $addqueue2 = "INSERT INTO queues SET que_no = '".$queue_no."', que_idcard = '".$user_idcard."', locationid = '".$user_locationid."'";
+            $queryaddqueue2 = mysqli_query($conn, $addqueue2);
+
+            echo '
+                <script>
+
+                    setTimeout(function(){
+                        swal({
+                            title: "การจองวัคซีนสำเร็จ",
+                            text: "คุณได้ทำการจองวัคซีนสำเร็จคิวของคุณคือ: '.$queue_no.'",
+                            type: "success",
+                            showButtonCancel: true,
+                            confirmButtonColor: "#2DEE4D",
+                            confirmButtonText: "ตกลง",
+                        }, function(isConfirm){
+                            if(isConfirm) window.location = "'.$mylocalhost.'";
+                            if(isCancel) window.location = "'.$mylocalhost.'";
+                        });
+                    }, 300);
+                </script>
+            ';
+        }
+    }
+    else if($_GET['status'] == "edit"){
+
+        $SELECTSQL = "SELECT * FROM reserves INNER JOIN queues ON reserves.res_idcard = queues.que_idcard";
+        $QUERYSELECT = mysqli_query($conn, $SELECTSQL);
+        $RESULTSELECT = mysqli_fetch_array($QUERYSELECT);
 
         echo '
             <script>
 
                 setTimeout(function(){
                     swal({
-                        title: "การจองวัคซีนสำเร็จ",
-                        text: "คุณได้ทำการจองวัคซีนสำเร็จคิวของคุณคือ: '.$queue_no.'",
+                        title: "การอัพเดทการจองสำเร็จ",
+                        text: "คุณได้ทำการอัพเดทคิวการจอง: '.$RESULTSELECT['que_no'].' เรียบร้อยแล้ว",
                         type: "success",
                         showButtonCancel: true,
                         confirmButtonColor: "#2DEE4D",
@@ -128,6 +157,13 @@
                 }, 300);
             </script>
         ';
+
+        $SQLUPDATE = "UPDATE reserves SET res_idcard = '".$user_idcard."', res_fname = '".$user_fname."', res_lname = '".$user_lname."', res_age = '".$user_age."',
+        res_birth = '".$user_birthday."', res_sex = '".$user_gender."', res_address = '".$user_address."', res_phone = '".$user_phone."', res_email = '".$user_email."',
+        res_disease = '".$user_disease."', res_getvac = '".$user_getvac."'";
+        $QUERY = mysqli_query($conn, $SQLUPDATE);
+
+        session_destroy();
     }
     
 ?>

@@ -1,4 +1,4 @@
-<?php include('api/setlink.php'); ?>
+<?php include('api/setlink.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,19 +41,26 @@
 </head>
 <body>
     <main>
-        <div id="myModal" class="modal fade" tabindex="-1">
-            <div class="modal-dialog modal-dialog-scrollable modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">รายละเอียดการฉีดวัคซีนทางเลือก</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <?php 
+        if($_COOKIE['loadmodal'] == 0){
+            setcookie("loadmodal", 1, time() + 3600); 
+        ?>
+            <div id="myModal" class="modal fade" tabindex="-1">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">รายละเอียดการฉีดวัคซีนทางเลือก</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <?php include('detail-list.html');?>
+                        </div>
+                        <div class="modal-footer"> <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ยอมรับ</button> </div>
                     </div>
-                    <div class="modal-body">
-                        <?php include('detail-list.html');?>
-                    </div>
-                    <div class="modal-footer"> <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ยอมรับ</button> </div>
                 </div>
             </div>
-        </div>
+        <?php
+        }
+        ?>
         <div class="blackground">
             <div class="image-logo"><img src="../best-of-vaccine/assets/img/logo.png"width="500px" height="300px"></div>
             <div class="message-logo">

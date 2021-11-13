@@ -1,4 +1,17 @@
-<?php include('api/setlink.php'); ?>
+<?php 
+    session_start();
+    include('api/connect.php');
+    include('api/setlink.php'); 
+
+    if($_SESSION['user_idcard'] == "" && $_SESSION['user_phone'] == ""){
+        header("location:$mylocalhost");
+        exit();
+    }
+
+    $SQL = "SELECT * FROM reserves WHERE res_idcard = '".$_SESSION['user_idcard']."' AND res_phone = '".$_SESSION['user_phone']."'";
+    $QUERY = mysqli_query($conn, $SQL);
+    $RESULT = mysqli_fetch_array($QUERY);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,48 +53,48 @@
             <main>
                 <div class="Box_Input_vaccin01">
                     <div class="Box_Input_vaccin02">
-                        <form action="<?php echo $mylocalhost;?>api/confirm-reserve?status=new" method="POST">
+                        <form action="<?php echo $mylocalhost;?>api/confirm-reserve?status=edit" method="POST">
                             <div class="container1">
                                 <div class="row">
                                     <div class='col-lg-12'>
                                         <label>กรอกเลขบัตรประชาชน 13 หลัก</label>
-                                        <input type="text" id="idcard" name="user_idcard" class="form-control" maxlength="13" required />
+                                        <input type="text" id="idcard" value="<?php echo $RESULT['res_idcard'];?>" name="user_idcard" class="form-control" maxlength="13" required />
                                         <span class="error"></span>
                                     </div>
                                 </div>
                             </div>
 
                             <label for="firstname">ชื่อจริง *</label><br/>
-                            <input type="text" name="user_fname"  pattern="^[ก-๏\s]+$" required><br/>
+                            <input type="text" name="user_fname" value="<?php echo $RESULT['res_fname'];?>" pattern="^[ก-๏\s]+$" required><br/>
 
                             <label for="lastname">นามสกุล *</label><br/>
-                            <input type="text" name="user_lname" pattern="^[ก-๏\s]+$" required><br/>
+                            <input type="text" name="user_lname" value="<?php echo $RESULT['res_lname'];?>" pattern="^[ก-๏\s]+$" required><br/>
 
                             <label for="age">อายุ *</label><br/>
-                            <input type="number" name="user_age" min="0" step="1" required><br/>
+                            <input type="number" name="user_age" value="<?php echo $RESULT['res_age'];?>" min="0" step="1" required><br/>
 
                             <label for="birth">วันเกิด *</label><br/>
-                            <input type="date" name="user_birthday" required/><br/>
+                            <input type="date" name="user_birthday" value="<?php echo $RESULT['res_birth'];?>" required/><br/>
 
                             <label for="gender">เพศ *</label><br/>
-                            <select name="user_gender">
+                            <select name="user_gender" required>
                                 <option value="male">ชาย</option>
                                 <option value="female">หญิง</option>
                                 <option value="other">อื่นๆ</option>
                             </select> <br/>
 
                             <label for="address">ที่อยู่ *</label><br/>
-                            <textarea name="user_address" cols="30" rows="10"></textarea> <br>
+                            <textarea name="user_address" cols="30" rows="10"><?php echo $RESULT['res_address'];?></textarea> <br>
 
                             <label for="phone ">เบอร์โทร *</label><br/>
-                            <input type="text" name="user_phone"  id="numberphone" pattern="(08|09|06)[0-9]{8}" maxlength="10" required><br/>
+                            <input type="text" name="user_phone" value="<?php echo $RESULT['res_phone'];?>" id="numberphone" pattern="(08|09|06)[0-9]{8}" maxlength="10" required><br/>
                             <span id="phonestatus"></span><br/>
 
                             <label for="email">อีเมล์ *</label><br/>
-                            <input type="email" name="user_email" required/><br/>
+                            <input type="email" value="<?php echo $RESULT['res_email'];?>" name="user_email" required/><br/>
 
                             <label for="disease">โรคประจำตัว *</label><br/>
-                            <select name="user_disease">
+                            <select name="user_disease" required/>
                                 <option value="ไม่มี">ไม่มี</option>
                                 <option value="โรคทางเดินหายใจเรื้อรังรุนแรง">โรคทางเดินหายใจเรื้อรังรุนแรง</option>
                                 <option value="โรคหัวใจและหลอดเลือด">โรคหัวใจและหลอดเลือด</option>
@@ -93,16 +106,23 @@
                                 <option value="อื่นๆ">อื่นๆ</option>
                             </select> <br/>
 
-                            <label for="disease">เคยรับการฉีควัคฉีนหรือยัง *</label><br/>
+                            <label for="user_getvac">เคยรับการฉีควัคฉีนหรือยัง *</label><br/>
                             <div class="radiodiv">
-                                <input type="radio" name="user_getvac" value="0" required/>
-                                <label>เคย</label><br/>
-                                <input style="margin-left:15px"; type="radio" name="user_getvac" value="1" required/>
-                                <label>ไม่เคย</label><br/>
+                                <?php if($RESULT['res_getvac'] == 0){?>
+                                    <input type="radio" name="user_getvac" value="0" checked required/>
+                                    <label>เคย</label><br/>
+                                    <input style="margin-left:15px"; type="radio" name="user_getvac" value="1" required/>
+                                    <label>ไม่เคย</label><br/>
+                                <?php }else if($RESULT['res_getvac'] == 1){?>
+                                    <input type="radio" name="user_getvac" value="0" required/>
+                                    <label>เคย</label><br/>
+                                    <input style="margin-left:15px"; type="radio" name="user_getvac" value="1" checked required/>
+                                    <label>ไม่เคย</label><br/>
+                                <?php }?>
                             </div>
 
                             <label for="vactype">วัคซีนที่ต้องการจอง *</label><br/>
-                            <select name="user_vactype">
+                            <select name="user_vactype" disabled required>
                                 <option value="Sinovac">Sinovac</option>
                                 <option value="AstraZeneca">AstraZeneca</option>
                                 <option value="Pifzer">Pifzer</option>
@@ -111,7 +131,7 @@
                             </select> <br/>
 
                             <label for="locationid">สถานที่ต้องการเข้ารับฉีควัคซีน *</label><br/>
-                            <select name="user_locationid">
+                            <select name="user_locationid" disabled required>
                                 <option value="1">รพ.1</option>
                                 <option value="2">รพ.2</option>
                                 <option value="3">รพ.3</option>
@@ -120,12 +140,18 @@
                             </select> <br/>
                             <div class="needles">
                                 <label for="needles">จำนวนวัคซีนที่ต้องการจอง *</label><br/>
-                                <input style="margin-left:15px" type="radio" name="user_needles" value="2" required/>
-                                <label> Full dose (2 เข็ม)</label></br>
-                                <input style="margin-left:15px" type="radio" name="user_needles" value="1" required/>
-                                <label> Half dose (1 เข็ม)</label></br>
-                            </div>
-                                                         
+                                <?php if($RESULT['res_needles'] == 2){?>
+                                    <input style="margin-left:15px" type="radio" name="user_needles" value="2" disabled checked required/>
+                                    <label> Full dose (2 เข็ม)</label></br>
+                                    <input style="margin-left:15px" type="radio" name="user_needles" value="1" disabled required/>
+                                    <label> Half dose (1 เข็ม)</label></br>
+                                <?php }else if($RESULT['res_needles'] == 1){?>
+                                    <input style="margin-left:15px" type="radio" name="user_needles" value="2" disabled required/>
+                                    <label> Full dose (2 เข็ม)</label></br>
+                                    <input style="margin-left:15px" type="radio" name="user_needles" value="1" disabled checked required/>
+                                    <label> Half dose (1 เข็ม)</label></br>
+                                <?php }?>
+                            </div>                  
                             <button type="submit">ยืนยันการจอง</button>
                         </form>
                     </div>
