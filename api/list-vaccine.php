@@ -4,7 +4,7 @@
 
     $querysinovac = mysqli_query($conn, "SELECT res_vactype FROM reserves WHERE res_vactype = 'Sinovac'");
     $countsinovac = mysqli_num_rows($querysinovac);
-
+    
     $queryastra = mysqli_query($conn, "SELECT res_vactype FROM reserves WHERE res_vactype = 'AstraZeneca'");
     $countastra = mysqli_num_rows($queryastra);
 

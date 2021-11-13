@@ -127,8 +127,9 @@
                             </select> <br/>
 
                             <label for="locationid">สถานที่ต้องการเข้ารับฉีควัคซีน *</label><br/>
-                            <select name="user_locationid" disabled required>
+                            <select name="user_locationid" required>
                                 <option value="<?php echo $RESULT['res_locationid'];?>">รพ.<?php echo $RESULT['res_locationid'];?></option>
+                                
                             </select> <br/>
                             <div class="needles">
                                 <label for="needles">จำนวนวัคซีนที่ต้องการจอง *</label><br/>

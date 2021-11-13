@@ -6,6 +6,11 @@
     $query = mysqli_query($conn, $sql);
     $result = mysqli_fetch_array($query);
 
+    $sql1 = "SELECT lct_name FROM locations WHERE lct_id = '".$result['res_locationid']."'";
+    $query2 = mysqli_query($conn, $sql1);
+    $result3 = mysqli_fetch_array($query2);
+    
+
     if($result){
         echo "เลขบัตรประชาชน: ".$result['res_idcard']."<br/>"
         ."ชื่อ-นามสกุล: ".$result['res_fname']." ".$result['res_lname']."<br/>"
@@ -16,10 +21,9 @@
         ."โรคประจำตัว: " .$result['res_disease']."<br/>"
         ."เคยรับการฉีควัคฉีนหรือยัง: " .$result['res_getvac']."<br/>"
         ."วัคซีนที่ต้องการจอง: " .$result['res_vactype']."<br/>"
-        ."สถานที่ต้องการเข้ารับฉีควัคซีน: " .$result['res_locationid']."<br/>"
+        ."สถานที่ต้องการเข้ารับฉีควัคซีน: " .$result3['lct_name']."<br/>"
         ."จำนวนวัคซีนที่ต้องการจอง: " .$result['res_needles']."<br/>"
         ."เลขลำดับคิวของคุณ: " .$result['que_no']."<br/>"
-        ."สถานที่การฉีดของคุณ: " .$result['que_no']."<br/>"
         ;
     }
     else{

@@ -1,4 +1,10 @@
 <?php include('api/setlink.php'); ?>
+<?php include('api/connect.php');
+    $queryvaccines = mysqli_query($conn, "SELECT `vac_name` FROM `vaccines`");
+    $querylocation = mysqli_query($conn, "SELECT `lct_name`,`lct_id` FROM `locations`");
+    
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,23 +106,20 @@
                                 <input style="margin-left:15px"; type="radio" name="user_getvac" value="1" required/>
                                 <label>ไม่เคย</label><br/>
                             </div>
-
                             <label for="vactype">วัคซีนที่ต้องการจอง *</label><br/>
                             <select name="user_vactype" required>
-                                <option value="Sinovac">Sinovac</option>
-                                <option value="AstraZeneca">AstraZeneca</option>
-                                <option value="Pifzer">Pifzer</option>
-                                <option value="Moderna">Moderna</option>
-                                <option value="Sinopharm">Sinopharm</option>
+                                <?php 
+                                    while($row = mysqli_fetch_array($queryvaccines)){?>
+                                        <option value="<?php echo $row['vac_name']?>"><?php echo $row['vac_name']?></option>
+                                <?php }?>
                             </select> <br/>
 
                             <label for="locationid">สถานที่ต้องการเข้ารับฉีควัคซีน *</label><br/>
                             <select name="user_locationid" required>
-                                <option value="1">รพ.1</option>
-                                <option value="2">รพ.2</option>
-                                <option value="3">รพ.3</option>
-                                <option value="4">รพ.4</option>
-                                <option value="5">รพ.5</option>
+                                <?php 
+                                    while($row = mysqli_fetch_array($querylocation)){?>
+                                        <option value="<?php echo $row['lct_id']?>"><?php echo $row['lct_name']?></option>
+                                <?php }?>
                             </select> <br/>
                             <div class="needles">
                                 <label for="needles">จำนวนวัคซีนที่ต้องการจอง *</label><br/>
