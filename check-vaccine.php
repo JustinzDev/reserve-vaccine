@@ -23,7 +23,6 @@
             });
         });
     </script>
-
     <script>
         let requestserver;
         function sendRequest(){
