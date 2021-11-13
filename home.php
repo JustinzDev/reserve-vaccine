@@ -28,9 +28,6 @@
             <a data-target="check-vaccine"> 
                 <img src="../best-of-vaccine/assets/img/menu1.png">
             </a>
-            <a  data-target="reserve"> 
-                <img src="../best-of-vaccine/assets/img/menu2.png">
-            </a>
             <a data-target="edit-reserve-login"> 
                 <img src="../best-of-vaccine/assets/img/menu3.png">
             </a>
