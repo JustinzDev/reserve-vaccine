@@ -43,7 +43,7 @@
     <main>
         <?php 
         if($_COOKIE['loadmodal'] == 0){
-            setcookie("loadmodal", 1, time() + 3600); 
+            setcookie("loadmodal", 1, time() + 1800); 
         ?>
             <div id="myModal" class="modal fade" tabindex="-1">
                 <div class="modal-dialog modal-dialog-scrollable modal-xl">
