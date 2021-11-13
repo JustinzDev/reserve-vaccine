@@ -64,14 +64,14 @@
                             <input type="date" name="user_birthday" required/><br/>
 
                             <label for="gender">เพศ *</label><br/>
-                            <select name="user_gender">
+                            <select name="user_gender" required>
                                 <option value="male">ชาย</option>
                                 <option value="female">หญิง</option>
                                 <option value="other">อื่นๆ</option>
                             </select> <br/>
 
                             <label for="address">ที่อยู่ *</label><br/>
-                            <textarea name="user_address" cols="30" rows="10"></textarea> <br>
+                            <textarea name="user_address" cols="30" rows="10" required></textarea> <br>
 
                             <label for="phone ">เบอร์โทร *</label><br/>
                             <input type="text" name="user_phone"  id="numberphone" pattern="(08|09|06)[0-9]{8}" maxlength="10" required><br/>
@@ -81,7 +81,7 @@
                             <input type="email" name="user_email" required/><br/>
 
                             <label for="disease">โรคประจำตัว *</label><br/>
-                            <select name="user_disease">
+                            <select name="user_disease" required>
                                 <option value="ไม่มี">ไม่มี</option>
                                 <option value="โรคทางเดินหายใจเรื้อรังรุนแรง">โรคทางเดินหายใจเรื้อรังรุนแรง</option>
                                 <option value="โรคหัวใจและหลอดเลือด">โรคหัวใจและหลอดเลือด</option>
@@ -102,7 +102,7 @@
                             </div>
 
                             <label for="vactype">วัคซีนที่ต้องการจอง *</label><br/>
-                            <select name="user_vactype">
+                            <select name="user_vactype" required>
                                 <option value="Sinovac">Sinovac</option>
                                 <option value="AstraZeneca">AstraZeneca</option>
                                 <option value="Pifzer">Pifzer</option>
@@ -111,7 +111,7 @@
                             </select> <br/>
 
                             <label for="locationid">สถานที่ต้องการเข้ารับฉีควัคซีน *</label><br/>
-                            <select name="user_locationid">
+                            <select name="user_locationid" required>
                                 <option value="1">รพ.1</option>
                                 <option value="2">รพ.2</option>
                                 <option value="3">รพ.3</option>
