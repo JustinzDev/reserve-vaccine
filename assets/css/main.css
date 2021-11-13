@@ -306,6 +306,14 @@ h5 { /* Type Selector */
     font-size: 17px;
     color: tomato;
 }
+#show-Result{
+    border: dashed 1px green;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    color: palevioletred;
+    font-size: 30px;
+}
 
 @media screen and (max-width: 1024px) { /* Moblie */
 

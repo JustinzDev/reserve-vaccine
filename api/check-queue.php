@@ -8,7 +8,19 @@
 
     if($result){
         echo "เลขบัตรประชาชน: ".$result['res_idcard']."<br/>"
-        ."ชื่อ-นามสกุล: ".$result['res_fname']." ".$result['res_lname'];
+        ."ชื่อ-นามสกุล: ".$result['res_fname']." ".$result['res_lname']."<br/>"
+        ."วันเกิด: ".$result['res_birth']."&nbsp;" ."อายุ: " .$result['res_age'] ."&nbsp;" ."เพศ: ".$result['res_sex']."<br/>"
+        ."ที่อยู่: ".$result['res_address']."<br/>" 
+        ."เบอร์โทรศัพท์: " .$result['res_phone']."<br/>"
+        ."อีเมล: " .$result['res_email']."<br/>"
+        ."โรคประจำตัว: " .$result['res_disease']."<br/>"
+        ."เคยรับการฉีควัคฉีนหรือยัง: " .$result['res_getvac']."<br/>"
+        ."วัคซีนที่ต้องการจอง: " .$result['res_vactype']."<br/>"
+        ."สถานที่ต้องการเข้ารับฉีควัคซีน: " .$result['res_locationid']."<br/>"
+        ."จำนวนวัคซีนที่ต้องการจอง: " .$result['res_needles']."<br/>"
+        ."เลขลำดับคิวของคุณ: " .$result['que_no']."<br/>"
+        ."สถานที่การฉีดของคุณ: " .$result['que_no']."<br/>"
+        ;
     }
     else{
         echo "Not Found";

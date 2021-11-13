@@ -78,12 +78,14 @@
                 <input id="phone" name="user_phone" pattern="(08|09|06)[0-9]{8}" maxlength="10" type="tel" size="20px" required><br>
                 <div class="divD">
                     <button id="login" type="submit" onclick="sendRequest()">เข้าสู่ระบบ</button>
+                    <div id="show-Result">
+                        
+                    </div>
                 </div>  
                 <h5 id="text6">***ถ้ามีปัญหาในการใช้งานระบบโปรดเเจ้งหรือทำการติดต่อมาที่ฝ่ายสนับสนุน***</h5>  
             </div>
         </div>
-        <div id="show-Result">
-        </div>
+       
     </main>
 </body>
 <script>
@@ -113,20 +115,20 @@
     });
 
     $(document).ready(function(){
-  $('#idcard').on('keyup',function(){
-    if($.trim($(this).val()) != '' && $(this).val().length == 13){
-      id = $(this).val().replace(/-/g,"");
-      var result = Script_checkID(id);
-      if(result === false){
-        $('span.error').removeClass('true').text('เลขบัตรผิด');
-      }else{
-        $('span.error').addClass('true').text('เลขบัตรถูกต้อง');
-      }
-    }else{
-      $('span.error').removeClass('true').text('');
-    }
-  })
-});
+    $('#idcard').on('keyup',function(){
+        if($.trim($(this).val()) != '' && $(this).val().length == 13){
+        id = $(this).val().replace(/-/g,"");
+        var result = Script_checkID(id);
+        if(result === false){
+            $('span.error').removeClass('true').text('เลขบัตรผิด');
+        }else{
+            $('span.error').addClass('true').text('เลขบัตรถูกต้อง');
+        }
+        }else{
+        $('span.error').removeClass('true').text('');
+        }
+    })
+    });
 
     function Script_checkID(id){
         if(! IsNumeric(id)) return false;
