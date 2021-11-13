@@ -123,20 +123,12 @@
 
                             <label for="vactype">วัคซีนที่ต้องการจอง *</label><br/>
                             <select name="user_vactype" disabled required>
-                                <option value="Sinovac">Sinovac</option>
-                                <option value="AstraZeneca">AstraZeneca</option>
-                                <option value="Pifzer">Pifzer</option>
-                                <option value="Moderna">Moderna</option>
-                                <option value="Sinopharm">Sinopharm</option>
+                                <option value="<?php echo $RESULT['res_vactype'];?>"><?php echo $RESULT['res_vactype'];?></option>
                             </select> <br/>
 
                             <label for="locationid">สถานที่ต้องการเข้ารับฉีควัคซีน *</label><br/>
                             <select name="user_locationid" disabled required>
-                                <option value="1">รพ.1</option>
-                                <option value="2">รพ.2</option>
-                                <option value="3">รพ.3</option>
-                                <option value="4">รพ.4</option>
-                                <option value="5">รพ.5</option>
+                                <option value="<?php echo $RESULT['res_locationid'];?>">รพ.<?php echo $RESULT['res_locationid'];?></option>
                             </select> <br/>
                             <div class="needles">
                                 <label for="needles">จำนวนวัคซีนที่ต้องการจอง *</label><br/>

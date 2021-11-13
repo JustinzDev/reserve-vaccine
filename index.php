@@ -1,4 +1,4 @@
-<?php include('api/setlink.php');?>
+<?php include('api/setlink.php'); error_reporting(0)?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

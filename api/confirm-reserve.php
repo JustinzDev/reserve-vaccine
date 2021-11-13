@@ -135,7 +135,7 @@
     }
     else if($_GET['status'] == "edit"){
 
-        $SELECTSQL = "SELECT * FROM reserves INNER JOIN queues ON reserves.res_idcard = queues.que_idcard";
+        $SELECTSQL = "SELECT * FROM reserves INNER JOIN queues ON reserves.res_idcard = queues.que_idcard WHERE queues.que_idcard = '".$_SESSION['user_idcard']."'";
         $QUERYSELECT = mysqli_query($conn, $SELECTSQL);
         $RESULTSELECT = mysqli_fetch_array($QUERYSELECT);
 
@@ -158,9 +158,12 @@
             </script>
         ';
 
+        $SQLUPDATEQUE = "UPDATE queues SET que_idcard = '".$user_idcard."' WHERE que_idcard = '".$RESULTSELECT['que_idcard']."'";
+        $QUERYUPDATEQUE = mysqli_query($conn, $SQLUPDATEQUE);
+
         $SQLUPDATE = "UPDATE reserves SET res_idcard = '".$user_idcard."', res_fname = '".$user_fname."', res_lname = '".$user_lname."', res_age = '".$user_age."',
         res_birth = '".$user_birthday."', res_sex = '".$user_gender."', res_address = '".$user_address."', res_phone = '".$user_phone."', res_email = '".$user_email."',
-        res_disease = '".$user_disease."', res_getvac = '".$user_getvac."'";
+        res_disease = '".$user_disease."', res_getvac = '".$user_getvac."' WHERE res_idcard = '".$_SESSION['user_idcard']."'";
         $QUERY = mysqli_query($conn, $SQLUPDATE);
 
         session_destroy();
