@@ -21,6 +21,7 @@
     array_push($resultArray, $countsinovac);
     array_push($resultArray, $countastra);
     array_push($resultArray, $countpifzer);
+    array_push($resultArray, $countmoderna);
     array_push($resultArray, $countsinopharm);
 
     echo json_encode($resultArray);

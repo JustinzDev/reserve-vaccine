@@ -33,7 +33,7 @@
             moderna.innerHTML = "Moderna: "+objectData[3]+" คน";
 
             let sinopharm = document.getElementById('sinopharm');
-            sinopharm.innerHTML = "Sinopharm: "+objectData[3]+" คน";
+            sinopharm.innerHTML = "Sinopharm: "+objectData[4]+" คน";
         }
         getDataFromAPI();
     </script>
