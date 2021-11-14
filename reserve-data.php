@@ -84,7 +84,7 @@
                             </select> <br/>
 
                             <label for="address">ที่อยู่ *</label><br/>
-                            <textarea name="user_address" cols="30" rows="10"><?php echo $RESULT['res_address'];?></textarea> <br>
+                            <textarea name="user_address" cols="30" rows="10" required><?php echo $RESULT['res_address'];?></textarea> <br>
 
                             <label for="phone ">เบอร์โทร *</label><br/>
                             <input type="text" name="user_phone" value="<?php echo $RESULT['res_phone'];?>" id="numberphone" pattern="(08|09|06)[0-9]{8}" maxlength="10" required><br/>
