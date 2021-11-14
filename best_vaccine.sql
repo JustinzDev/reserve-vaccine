@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2021 at 06:56 PM
+-- Generation Time: Nov 14, 2021 at 01:41 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -34,6 +34,17 @@ CREATE TABLE `locations` (
   `lct_capa` int(12) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `locations`
+--
+
+INSERT INTO `locations` (`lct_id`, `lct_name`, `lct_max`, `lct_capa`) VALUES
+(1, 'สภานีกลางบางซื่อ', 0, 0),
+(2, 'โรงพยาบาลบางโพ', 0, 0),
+(3, 'โรงพยาบาลรามาธิบดี', 0, 0),
+(4, 'โรงพยาบาลธนบุรี 2', 0, 0),
+(5, 'โรงพยาบาลบางพลี', 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -43,16 +54,19 @@ CREATE TABLE `locations` (
 CREATE TABLE `queues` (
   `que_idcard` varchar(20) NOT NULL,
   `que_no` int(12) NOT NULL DEFAULT 0,
-  `locationid` int(12) NOT NULL DEFAULT 0
+  `locationid` int(12) NOT NULL DEFAULT 0,
+  `que_status` enum('stable','cancel') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `queues`
 --
 
-INSERT INTO `queues` (`que_idcard`, `que_no`, `locationid`) VALUES
-('', 1001, 0),
-('1869900440502', 1001, 1);
+INSERT INTO `queues` (`que_idcard`, `que_no`, `locationid`, `que_status`) VALUES
+('1446956215912', 1002, 2, 'stable'),
+('1869900440502', 1003, 2, 'stable'),
+('9893488537869', 1001, 3, 'stable'),
+('NULL', 1001, 2, 'cancel');
 
 -- --------------------------------------------------------
 
@@ -82,7 +96,9 @@ CREATE TABLE `reserves` (
 --
 
 INSERT INTO `reserves` (`res_idcard`, `res_fname`, `res_lname`, `res_age`, `res_address`, `res_phone`, `res_sex`, `res_birth`, `res_disease`, `res_email`, `res_getvac`, `res_vactype`, `res_needles`, `res_locationid`) VALUES
-('1869900440502', 'ศักรินทร์', 'สิมมา', 20, 'sdxcxzc', '0616450118', 'male', '2021-11-12', 'ไม่มี', 'fullyz1532@gmail.com', 0, 'Sinovac', 2, 1);
+('1446956215912', 'ศักรินทร์', 'สิมมา', 21, 'dczxczxc', '0944353453', 'male', '2021-11-01', 'ไม่มี', 'Test112233@gmail.com', 0, 'Pifzer', 2, 2),
+('1869900440502', 'ศักรินทร์', 'สิมมา', 20, 'sdaxzc', '0616450118', 'male', '2021-11-03', 'ไม่มี', 'fullyz1532@gmail.com', 0, 'AstraZeneca', 2, 2),
+('9893488537869', 'ฟหกหฟ', 'ผปแผป', 21, 'xddzsd', '0989455467', 'male', '2021-11-11', 'โรคหัวใจและหลอดเลือด', 'Test12345@gmail.com', 0, 'AstraZeneca', 2, 3);
 
 -- --------------------------------------------------------
 
@@ -95,6 +111,17 @@ CREATE TABLE `vaccines` (
   `vac_name` varchar(64) DEFAULT NULL,
   `vac_detail` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `vaccines`
+--
+
+INSERT INTO `vaccines` (`vac_id`, `vac_name`, `vac_detail`) VALUES
+(1, 'Sinovac', NULL),
+(2, 'AstraZeneca', NULL),
+(3, 'Pifzer', NULL),
+(4, 'Moderna', NULL),
+(5, 'Sinopharm', NULL);
 
 --
 -- Indexes for dumped tables
@@ -134,13 +161,13 @@ ALTER TABLE `vaccines`
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `lct_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `lct_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `vaccines`
 --
 ALTER TABLE `vaccines`
-  MODIFY `vac_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `vac_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
