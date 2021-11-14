@@ -47,21 +47,6 @@
                 spanvac5.innerHTML = "จำนวนคนจองวัคซีน Sinopharm: "+objectData[i].hospital_vaccine_5+"<br/>";
                 div.appendChild(spanvac5);
             } 
-
-            /*let sinovac = document.getElementById('sinovac');
-            sinovac.innerHTML = "Sinovac: "+objectData[0]+" คน";
-
-            let astraZeneca = document.getElementById('astraZeneca');
-            astraZeneca.innerHTML = "AstraZeneca: "+objectData[1]+" คน";
-
-            let pifzer = document.getElementById('pifzer');
-            pifzer.innerHTML = "Pifzer: "+objectData[2]+" คน";
-
-            let moderna = document.getElementById('moderna');
-            moderna.innerHTML = "Moderna: "+objectData[3]+" คน";
-
-            let sinopharm = document.getElementById('sinopharm');
-            sinopharm.innerHTML = "Sinopharm: "+objectData[4]+" คน";*/
         }
         getDataFromAPI();
     </script>
