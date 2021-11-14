@@ -103,6 +103,31 @@
     }
 
     if($_GET['status'] == "new"){
+
+        $checkqueidcard = "SELECT * FROM queues WHERE que_idcard = '".$user_idcard."'";
+        $queryqueidcard = mysqli_query($conn, $checkqueidcard);
+        $resultqueidcard = mysqli_fetch_array($queryqueidcard);
+
+        if($resultqueidcard){
+            echo '
+                <script>
+                    setTimeout(function(){
+                        swal({
+                            title: "เกิดข้อผิดพลาด",
+                            text: "เลขบัตรประชาชนนี้เคยลงทะเบียนไปแล้ว, ไม่สามารถลงได้อีก!",
+                            type: "error",
+                            showButtonCancel: true,
+                        }, function(isConfirm){
+                            if(isConfirm) window.location = "'.$mylocalhost.'";
+                            if(isCancel) window.location = "'.$mylocalhost.'";
+                        });
+                    }, 300);
+                </script>
+                ';
+            session_destroy();
+            exit();
+        }
+
         $addreserve = "INSERT INTO reserves (res_idcard, res_fname, res_lname, res_age, res_address, res_phone, res_sex, res_birth, res_disease, res_email, res_getvac, res_vactype, res_needles, res_locationid) 
         VALUES ('".$user_idcard."', '".$user_fname."', '".$user_lname."', '".$user_age."', '".$user_address."', '".$user_phone."', '".$user_gender."', 
         '".$user_birthday."', '".$user_disease."', '".$user_email."', '".$user_getvac."', '".$user_vactype."', '".$user_needles."', '".$user_locationid."')";
@@ -137,6 +162,30 @@
         }
     }
     else if($_GET['status'] == "edit"){
+
+        $checkqueidcard = "SELECT * FROM queues WHERE que_idcard = '".$user_idcard."'";
+        $queryqueidcard = mysqli_query($conn, $checkqueidcard);
+        $resultqueidcard = mysqli_fetch_array($queryqueidcard);
+
+        if($resultqueidcard){
+            echo '
+                <script>
+                    setTimeout(function(){
+                        swal({
+                            title: "เกิดข้อผิดพลาด",
+                            text: "เลขบัตรประชาชนนี้เคยลงทะเบียนไปแล้ว, ไม่สามารถลงได้อีก!",
+                            type: "error",
+                            showButtonCancel: true,
+                        }, function(isConfirm){
+                            if(isConfirm) window.location = "'.$mylocalhost.'";
+                            if(isCancel) window.location = "'.$mylocalhost.'";
+                        });
+                    }, 300);
+                </script>
+                ';
+            session_destroy();
+            exit();
+        }
 
         $SELECTSQL = "SELECT * FROM reserves INNER JOIN queues ON reserves.res_idcard = queues.que_idcard WHERE queues.que_idcard = '".$_SESSION['user_idcard']."'";
         $QUERYSELECT = mysqli_query($conn, $SELECTSQL);

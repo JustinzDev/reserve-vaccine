@@ -17,12 +17,10 @@
     $QUERY = mysqli_query($conn, $SQLRESERVE);
 
     if(mysqli_num_rows($QUERY) > 0){
-
-
         $DELETE = "DELETE FROM reserves WHERE res_idcard = '".$_GET['user_idcard']."' AND res_phone = '".$_GET['user_phone']."'";
         $QUERYDELETE = mysqli_query($conn, $DELETE);
 
-        $UPDATEQUE = "UPDATE queues SET que_status = 'cancel', que_idcard = 'NULL' WHERE que_idcard = '".$_GET['user_idcard']."'";
+        $UPDATEQUE = "UPDATE queues SET que_status = 'cancel' WHERE que_idcard = '".$_GET['user_idcard']."'";
         $QUERYUPADTE = mysqli_query($conn, $UPDATEQUE);
 
         if($QUERYDELETE && $QUERYUPADTE){
