@@ -17,11 +17,17 @@
     $QUERY = mysqli_query($conn, $SQLRESERVE);
 
     if(mysqli_num_rows($QUERY) > 0){
-        $DELETE = "DELETE FROM reserves WHERE res_idcard = '".$_GET['user_idcard']."' AND res_phone = '".$_GET['user_phone']."'";
-        $QUERYDELETE = mysqli_query($conn, $DELETE);
+        $RESULT_RESERVE = mysqli_fetch_array($QUERY);
 
         $UPDATEQUE = "UPDATE queues SET que_status = 'cancel' WHERE que_idcard = '".$_GET['user_idcard']."'";
         $QUERYUPADTE = mysqli_query($conn, $UPDATEQUE);
+
+        $count_capa = $RESULT_RESERVE['lct_capa'] - 1;
+        $UPDATELO = "UPDATE locations SET lct_capa = $count_capa WHERE lct_id = '".$RESULT_RESERVE['lct_id']."'";
+        $QUERYUPADTELO = mysqli_query($conn, $UPDATELO);
+
+        $DELETE = "DELETE FROM reserves WHERE res_idcard = '".$_GET['user_idcard']."' AND res_phone = '".$_GET['user_phone']."'";
+        $QUERYDELETE = mysqli_query($conn, $DELETE);
 
         if($QUERYDELETE && $QUERYUPADTE){
             echo '
