@@ -37,7 +37,6 @@
 
         function showResult(){
             if(requestserver.readyState == 4 && requestserver.status == 200){
-
                 if(requestserver.responseText == "Not Found"){
                     let notfound = document.getElementById('result-data');
                     notfound.innerHTML = "ไม่พบข้อมูล!";

@@ -20,7 +20,35 @@
             let objectData = JSON.parse(rawData);
             console.log(objectData);
 
-            let sinovac = document.getElementById('sinovac');
+            for(let i=0; i<objectData.length; i++){
+                let listofvaccine = document.getElementById('listofvaccine');
+
+                let div = document.createElement('div');
+                div.innerHTML = objectData[i].hospitalname+" (จำนวนยอด: "+objectData[i].hospitalcapa+"/"+objectData[i].hospitalmax+")"+"<br/>";
+                listofvaccine.appendChild(div);
+
+                let spanvac1 = document.createElement('span');
+                spanvac1.innerHTML = "จำนวนคนจองวัคซีน Sinovac: "+objectData[i].hospital_vaccine_1+"<br/>";
+                div.appendChild(spanvac1);
+
+                let spanvac2 = document.createElement('span');
+                spanvac2.innerHTML = "จำนวนคนจองวัคซีน AstraZeneca: "+objectData[i].hospital_vaccine_2+"<br/>";
+                div.appendChild(spanvac2);
+
+                let spanvac3 = document.createElement('span');
+                spanvac3.innerHTML = "จำนวนคนจองวัคซีน Pifzer: "+objectData[i].hospital_vaccine_3+"<br/>";
+                div.appendChild(spanvac3);
+
+                let spanvac4 = document.createElement('span');
+                spanvac4.innerHTML = "จำนวนคนจองวัคซีน Moderna: "+objectData[i].hospital_vaccine_4+"<br/>";
+                div.appendChild(spanvac4);
+
+                let spanvac5 = document.createElement('span');
+                spanvac5.innerHTML = "จำนวนคนจองวัคซีน Sinopharm: "+objectData[i].hospital_vaccine_5+"<br/>";
+                div.appendChild(spanvac5);
+            } 
+
+            /*let sinovac = document.getElementById('sinovac');
             sinovac.innerHTML = "Sinovac: "+objectData[0]+" คน";
 
             let astraZeneca = document.getElementById('astraZeneca');
@@ -33,7 +61,7 @@
             moderna.innerHTML = "Moderna: "+objectData[3]+" คน";
 
             let sinopharm = document.getElementById('sinopharm');
-            sinopharm.innerHTML = "Sinopharm: "+objectData[4]+" คน";
+            sinopharm.innerHTML = "Sinopharm: "+objectData[4]+" คน";*/
         }
         getDataFromAPI();
     </script>
@@ -74,13 +102,7 @@
             <h5>[คำเตือน]</h5>
             <h5>การฉีดวัคซีนจะไม่มีค่าใช้จ่าย ส่วนการจองวัคซีนโควิด 19 ของสถานพยาบาลเอกชนเป็นทางเลือกหนึ่งที่ประชาชนสามารถเลือกรับบริการได้ แต่ต้องชำระค่าใช้จ่ายเอง</h5>
         </div>
-        <div class="list-of-vaccine">
-            <h4 id="sinovac"></h4><br/>
-            <h4 id="astraZeneca"></h4><br/>
-            <h4 id="pifzer"></h4><br/>
-            <h4 id="moderna"></h4><br/>
-            <h4 id="sinopharm"></h4><br/>
-        </div>
+        <div id="listofvaccine"></div>
         <div id="contentdata">
             <?php include('home.php');?>
         </div>
