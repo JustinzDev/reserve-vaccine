@@ -22,8 +22,7 @@
         $UPDATEQUE = "UPDATE queues SET que_status = 'cancel' WHERE que_idcard = '".$_GET['user_idcard']."'";
         $QUERYUPADTE = mysqli_query($conn, $UPDATEQUE);
 
-        $count_capa = $RESULT_RESERVE['lct_capa'] - 1;
-        $UPDATELO = "UPDATE locations SET lct_capa = $count_capa WHERE lct_id = '".$RESULT_RESERVE['res_locationid']."'";
+        $UPDATELO = "UPDATE locations SET lct_capa = lct_capa - 1 WHERE lct_id = '".$RESULT_RESERVE['res_locationid']."'";
         $QUERYUPADTELO = mysqli_query($conn, $UPDATELO);
 
         $DELETE = "DELETE FROM reserves WHERE res_idcard = '".$_GET['user_idcard']."' AND res_phone = '".$_GET['user_phone']."'";
