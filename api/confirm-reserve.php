@@ -132,7 +132,7 @@
         $QUERYLOCATION = mysqli_query($conn, $LOCATION);
         $RESULTLOCATION = mysqli_fetch_array($QUERYLOCATION);
 
-        if($RESULTLOCATION['lct_capa'] + 1 > $RESULTLOCATION['lct_max']){
+        if(($RESULTLOCATION['lct_capa'] + 1) > $RESULTLOCATION['lct_max']){
             echo '
                 <script>
                     setTimeout(function(){
@@ -163,6 +163,11 @@
             if($rowhave > 0) $queue_no += $rowhave;
             $addqueue2 = "INSERT INTO queues SET que_no = '".$queue_no."', que_idcard = '".$user_idcard."', locationid = '".$user_locationid."', que_status = 'stable'";
             $queryaddqueue2 = mysqli_query($conn, $addqueue2);
+
+            $newcountlocation = $RESULTLOCATION['lct_capa'] + 1;
+
+            $UPDATELOCATION = "UPDATE locations SET lct_capa = '".$newcountlocation."' WHERE lct_id = '".$user_locationid."'";
+            $QUERYUPLOCATION = mysqli_query($conn, $UPDATELOCATION);
 
             echo '
                 <script>
