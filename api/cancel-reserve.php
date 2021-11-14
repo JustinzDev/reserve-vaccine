@@ -23,7 +23,7 @@
         $QUERYUPADTE = mysqli_query($conn, $UPDATEQUE);
 
         $count_capa = $RESULT_RESERVE['lct_capa'] - 1;
-        $UPDATELO = "UPDATE locations SET lct_capa = $count_capa WHERE lct_id = '".$RESULT_RESERVE['lct_id']."'";
+        $UPDATELO = "UPDATE locations SET lct_capa = $count_capa WHERE lct_id = '".$RESULT_RESERVE['res_locationid']."'";
         $QUERYUPADTELO = mysqli_query($conn, $UPDATELO);
 
         $DELETE = "DELETE FROM reserves WHERE res_idcard = '".$_GET['user_idcard']."' AND res_phone = '".$_GET['user_phone']."'";
