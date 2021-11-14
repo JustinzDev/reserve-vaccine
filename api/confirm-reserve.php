@@ -128,12 +128,35 @@
             exit();
         }
 
+        $LOCATION = "SELECT * FROM locations WHERE lct_id = '".$user_locationid."'";
+        $QUERYLOCATION = mysqli_query($conn, $LOCATION);
+        $RESULTLOCATION = mysqli_fetch_array($QUERYLOCATION);
+
+        if($RESULTLOCATION['lct_capa'] + 1 > $RESULTLOCATION['lct_max']){
+            echo '
+                <script>
+                    setTimeout(function(){
+                        swal({
+                            title: "เกิดข้อผิดพลาด",
+                            text: "คิวฉีดวัคซีนของ '.$RESULTLOCATION['lct_name'].' เต็มแล้ว!",
+                            type: "error",
+                            showButtonCancel: true,
+                        }, function(isConfirm){
+                            if(isConfirm) window.location = "'.$mylocalhost.'";
+                            if(isCancel) window.location = "'.$mylocalhost.'";
+                        });
+                    }, 300);
+                </script>
+                ';
+            session_destroy();
+            exit();
+        }
+
         $addreserve = "INSERT INTO reserves (res_idcard, res_fname, res_lname, res_age, res_address, res_phone, res_sex, res_birth, res_disease, res_email, res_getvac, res_vactype, res_needles, res_locationid) 
         VALUES ('".$user_idcard."', '".$user_fname."', '".$user_lname."', '".$user_age."', '".$user_address."', '".$user_phone."', '".$user_gender."', 
         '".$user_birthday."', '".$user_disease."', '".$user_email."', '".$user_getvac."', '".$user_vactype."', '".$user_needles."', '".$user_locationid."')";
         $queryaddreserve = mysqli_query($conn, $addreserve);
         if($queryaddreserve){
-
             $queue_no = 1001;
             $result = mysqli_query($conn, "SELECT * FROM queues WHERE locationid = '".$user_locationid."'");
             $rowhave = mysqli_num_rows($result);

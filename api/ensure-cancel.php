@@ -32,7 +32,7 @@
                     window.location = "'.$mylocalhost.'";
                 }
               });
-        }, 100);
+        }, 300);
     </script>
     ';
 

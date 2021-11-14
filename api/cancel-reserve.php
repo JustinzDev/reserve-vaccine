@@ -36,7 +36,7 @@
                     .then((value) => {
                         window.location = "'.$mylocalhost.'";
                     });
-                }, 100);
+                }, 300);
             </script>
             ';
             session_destroy();
@@ -55,7 +55,7 @@
                 .then((value) => {
                     window.location = "'.$mylocalhost.'";
                 });
-            }, 100);
+            }, 300);
         </script>
         ';
         session_destroy();
