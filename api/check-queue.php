@@ -1,6 +1,7 @@
 <?php
     include('connect.php');
     include('setlink.php');
+    error_reporting(0);
     
     $sql = "SELECT * FROM reserves INNER JOIN queues ON reserves.res_idcard = queues.que_idcard WHERE reserves.res_idcard = '".$_GET['user_idcard']."' AND reserves.res_phone = '".$_GET['user_phone']."'";
     $query = mysqli_query($conn, $sql);
@@ -12,7 +13,6 @@
     
 
     if($result){
-
         if($result['que_status'] == 'stable') $que_status = 'รอการฉีดวัคซีน';
         else if($result['que_status'] == 'cancel') $que_status = 'ยกเลิกสิทธ์';
 
@@ -37,6 +37,6 @@
         ;
     }
     else{
-        echo "Not Found";
+        echo "ไม่พบข้อมูล!";
     }
 ?>
