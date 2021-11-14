@@ -188,11 +188,19 @@ h5 { /* Type Selector */
     border: 1px solid rgba(151, 151, 151, 0.5);
 }
 
-.Box_Input_vaccin02 button{ /*Descendant selector*/
+.Box_Input_vaccin02 .confirm{ /*Descendant selector*/
     margin-top: 10px; 
     margin-bottom: 10px;
     border: 1px solid rgba(60, 211, 0, 0.5);
     background-color: rgb(159, 255, 114);
+    padding: 5px 10px;
+}
+
+.Box_Input_vaccin02 .cancel{ /*Descendant selector*/
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    border: 1px solid rgba(211, 0, 0, 0.5);
+    background-color: rgb(255, 114, 114);
     padding: 5px 10px;
 }
 

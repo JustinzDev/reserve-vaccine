@@ -12,9 +12,20 @@
     
 
     if($result){
-        echo "เลขบัตรประชาชน: ".$result['res_idcard']."<br/>"
+
+        if($result['que_status'] == 'stable') $que_status = 'รอการฉีดวัคซีน';
+        else if($result['que_status'] == 'cancel') $que_status = 'ยกเลิกสิทธ์';
+
+        if($result['res_sex'] == 'male') $gender = "ชาย";
+        else if($result['res_sex'] == 'female') $gender = "หญิง";
+        else if($result['res_sex'] == 'other') $gender = "เพศทางเลือก";
+
+        echo "เลขลำดับคิวของคุณ: " .$result['que_no']."<br/>"
+        ."สถานะคิว: " .$que_status."<br/>"
+        ."เลขบัตรประชาชน: ".$result['res_idcard']."<br/>"
         ."ชื่อ-นามสกุล: ".$result['res_fname']." ".$result['res_lname']."<br/>"
-        ."วันเกิด: ".$result['res_birth']."&nbsp;" ."อายุ: " .$result['res_age'] ."&nbsp;" ."เพศ: ".$result['res_sex']."<br/>"
+        ."วันเกิด: ".$result['res_birth']."&nbsp;" ."อายุ: " .$result['res_age'] 
+        ."&nbsp;" ."เพศ: ".$gender."<br/>"
         ."ที่อยู่: ".$result['res_address']."<br/>" 
         ."เบอร์โทรศัพท์: " .$result['res_phone']."<br/>"
         ."อีเมล: " .$result['res_email']."<br/>"
@@ -23,7 +34,6 @@
         ."วัคซีนที่ต้องการจอง: " .$result['res_vactype']."<br/>"
         ."สถานที่ต้องการเข้ารับฉีควัคซีน: " .$result3['lct_name']."<br/>"
         ."จำนวนวัคซีนที่ต้องการจอง: " .$result['res_needles']."<br/>"
-        ."เลขลำดับคิวของคุณ: " .$result['que_no']."<br/>"
         ;
     }
     else{

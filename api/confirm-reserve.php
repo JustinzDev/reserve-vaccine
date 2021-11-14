@@ -50,6 +50,7 @@
                 }, 300);
             </script>
             ';
+        session_destroy();
         exit();
     }
 
@@ -73,6 +74,7 @@
                 }, 300);
             </script>
             ';
+        session_destroy();
         exit();
     }
 
@@ -96,6 +98,7 @@
                 }, 300);
             </script>
             ';
+        session_destroy();
         exit();
     }
 
@@ -110,7 +113,7 @@
             $result = mysqli_query($conn, "SELECT * FROM queues WHERE locationid = '".$user_locationid."'");
             $rowhave = mysqli_num_rows($result);
             if($rowhave > 0) $queue_no += $rowhave;
-            $addqueue2 = "INSERT INTO queues SET que_no = '".$queue_no."', que_idcard = '".$user_idcard."', locationid = '".$user_locationid."'";
+            $addqueue2 = "INSERT INTO queues SET que_no = '".$queue_no."', que_idcard = '".$user_idcard."', locationid = '".$user_locationid."', que_status = 'stable'";
             $queryaddqueue2 = mysqli_query($conn, $addqueue2);
 
             echo '

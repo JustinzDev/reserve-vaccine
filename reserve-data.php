@@ -127,7 +127,7 @@
                             </select> <br/>
 
                             <label for="locationid">สถานที่ต้องการเข้ารับฉีควัคซีน *</label><br/>
-                            <select name="user_locationid" required>
+                            <select name="user_locationid" disabled required>
                                 <option value="<?php echo $RESULT['res_locationid'];?>">รพ.<?php echo $RESULT['res_locationid'];?></option>
                                 
                             </select> <br/>
@@ -145,7 +145,8 @@
                                     <label> Half dose (1 เข็ม)</label></br>
                                 <?php }?>
                             </div>                  
-                            <button type="submit">ยืนยันการจอง</button>
+                            <button class="confirm" type="submit">ยืนยันการจอง</button>
+                            <a href="api/ensure-cancel?user_idcard=<?php echo $RESULT['res_idcard'];?>&user_phone=<?php echo $RESULT['res_phone'];?>"><button class="cancel" type="button">ยกเลิกสิทธ์</button></a>
                         </form>
                     </div>
                 </div>

@@ -129,7 +129,7 @@
                                 <label> Half dose (1 เข็ม)</label></br>
                             </div>
                                                          
-                            <button type="submit">ยืนยันการจอง</button>
+                            <button class="confirm" type="submit">ยืนยันการจอง</button>
                         </form>
                     </div>
                 </div>
@@ -137,7 +137,6 @@
 </body>
 <script> 
     $(document).ready(function(){
-
         $('#numberphone').on('keyup', function(){
             var checkphone = document.getElementById("numberphone"), phonepattern = checkphone.pattern;
             var patternphone = new RegExp(phonepattern);
