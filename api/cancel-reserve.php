@@ -13,7 +13,8 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     ';
 
-    $SQLRESERVE = "SELECT * FROM reserves INNER JOIN queues ON reserves.res_idcard = queues.que_idcard WHERE reserves.res_idcard = '".$_GET['user_idcard']."' AND reserves.res_phone = '".$_GET['user_phone']."'";
+    $SQLRESERVE = "SELECT * FROM reserves INNER JOIN queues ON reserves.res_idcard = queues.que_idcard 
+    WHERE reserves.res_idcard = '".$_GET['user_idcard']."' AND reserves.res_phone = '".$_GET['user_phone']."'";
     $QUERY = mysqli_query($conn, $SQLRESERVE);
 
     if(mysqli_num_rows($QUERY) > 0){
@@ -25,7 +26,8 @@
         $UPDATELO = "UPDATE locations SET lct_capa = lct_capa - 1 WHERE lct_id = '".$RESULT_RESERVE['res_locationid']."'";
         $QUERYUPADTELO = mysqli_query($conn, $UPDATELO);
 
-        $DELETE = "DELETE FROM reserves WHERE res_idcard = '".$_GET['user_idcard']."' AND res_phone = '".$_GET['user_phone']."'";
+        $DELETE = "DELETE FROM reserves WHERE res_idcard = 
+        '".$_GET['user_idcard']."' AND res_phone = '".$_GET['user_phone']."'";
         $QUERYDELETE = mysqli_query($conn, $DELETE);
 
         if($QUERYDELETE && $QUERYUPADTE){

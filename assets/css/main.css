@@ -18,9 +18,9 @@ a:hover{ /* Pseudo-Class Selector */
 }
 
 .menutype{ /* Class Selector */
-    margin: auto;
+     
     width: 100%;
-    text-align: center;
+    padding: 20px;
     margin-top: 20px;
 }
 
@@ -340,3 +340,19 @@ h5 { /* Type Selector */
         background-color: rgb(243, 243, 243);
     }
 }
+
+/* หน้าเช็คจำนวนวัคซีนของแต่ละโรงพยาบาล */
+
+.table {
+    width:100%;
+}
+.table th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 15px;
+}
+.table{
+    margin-top: 50px;
+}
+
