@@ -3,6 +3,9 @@
 
     error_reporting(0);
     
+    if(isset($_GET['hospital'])) $hospital = $_GET['hospital'];
+    else $hospital = 1;
+
     $per_page = 5;
     if (isset($_GET['page'])) $page = $_GET['page'];
     else $page = 1;
@@ -10,15 +13,16 @@
     $start = ($page - 1) * $per_page;
 
     $SQL1 = "SELECT reserves.res_locationid, reserves.res_fname, reserves.res_lname, locations.lct_id, locations.lct_name FROM reserves INNER JOIN locations 
-    ON reserves.res_locationid = locations.lct_id LIMIT {$start}, {$per_page}";
+    ON reserves.res_locationid = locations.lct_id WHERE locations.lct_id = '".$hospital."' LIMIT {$start}, {$per_page}";
     $SQLQUERY1 = mysqli_query($conn, $SQL1);
     
-    
     $SQL2 = "SELECT reserves.res_locationid, reserves.res_fname, reserves.res_lname, locations.lct_id, locations.lct_name FROM reserves INNER JOIN locations 
-    ON reserves.res_locationid = locations.lct_id";
+    ON reserves.res_locationid = locations.lct_id WHERE locations.lct_id = '".$hospital."'";
     $SQLQUERY2 = mysqli_query($conn, $SQL2);
     $TOTAL_RECORD = mysqli_num_rows($SQLQUERY2);
     $TOTAL_PAGE = ceil($TOTAL_RECORD / $per_page);
+
+    $QUERYLOCATION = mysqli_query($conn, "SELECT * FROM locations");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,13 +45,15 @@
 
     <nav>
         <div class="menutype">
-        <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost; ?>">โรงพยาบาล</a>
+            <?php while($ROWSLOCATION = mysqli_fetch_array($QUERYLOCATION)){?>
+                <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost; ?>check-all?hospital=<?php echo $ROWSLOCATION['lct_id'];?>"><?php echo $ROWSLOCATION['lct_name'];?></a>
+            <?php }?>
             <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost; ?>">กลับหน้าหลัก</a>
         </div>
     </nav>
 
     <main>
-        <h2 style="text-align:center; margin-top:20px;">หน้า <?php echo $_GET['page'];?></h2>
+        <h2 style="text-align:center; margin-top:20px;">หน้า <?php echo $page;?></h2>
         <table class="table">
             <tr>
                 <th>#</th>
@@ -67,11 +73,11 @@
     </main>
     <nav>
         <div class="menutype">
-            <a href="./check-all?page=1" style="text-decoration: none; color: black;"><<</a>
+            <a href="./check-all?page=1&hospital=<?php echo $hospital;?>" style="text-decoration: none; color: black;"><<</a>
             <?php for($i=1; $i<=$TOTAL_PAGE; $i++){?>
-                <a href="./check-all?page=<?php echo $i;?>" style="text-decoration: none; color: black;"><?php echo $i;?></a>
+                <a href="./check-all?page=<?php echo $i;?>&hospital=<?php echo $hospital;?>" style="text-decoration: none; color: black;"><?php echo $i;?></a>
             <?php }?>
-            <a href="./check-all?page=<?php echo $TOTAL_PAGE;?>" style="text-decoration: none; color: black;">>></a>
+            <a href="./check-all?page=<?php echo $TOTAL_PAGE;?>&hospital=<?php echo $hospital;?>" style="text-decoration: none; color: black;">>></a>
         </div>
     </nav>
 </body>
