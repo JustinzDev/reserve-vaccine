@@ -37,6 +37,6 @@
         ;
     }
     else{
-        echo "ไม่พบข้อมูล!";
+        echo "Not Found";
     }
 ?>
