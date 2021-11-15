@@ -51,13 +51,13 @@
    
 </head>
 <body>
-    <header>
+    <nav>
         <div class="menutype">
             <a data-target="reserve">จองวัคซีน</a>
             <a data-target="check-vaccine">เช็คคิววัคซีน</a>
             <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost;?>">กลับหน้าหลัก</a>
         </div>
-    </header>
+    </nav>
     <main>
         <div class="divA" id="form-control-input">
             <div class="divC">

@@ -22,7 +22,7 @@
     </script>
 </head>
 <body>
-    <header>
+    <nav>
         <div class="menu-blackground">
             <hr>
             <a data-target="check-vaccine"> 
@@ -33,7 +33,7 @@
             </a>
             <hr>
         </div>
-    </header>
+    </nav>
     <main>
         <div class="text-blackground2">
             <h2>ขอบคุณทุกท่านที่สนใจจองวัคซีนกับทางโรงพยาบาลของเรา</h2>

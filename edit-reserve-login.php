@@ -36,11 +36,11 @@
     </script>
 </head>
 <body>
-    <header>
+    <nav>
         <div class="menutype">
             <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost;?>">กลับหน้าหลัก</a>
         </div>
-    </header>
+    </nav>
     <main>
         <div class="divA" id="form-control-input">
             <div class="divC">
