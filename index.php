@@ -92,6 +92,11 @@
         <div id="listofvaccine">
             
         </div>
+        <nav>
+            <div class="menutype">
+                <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost; ?>check-all">ดูข้อมูลเพิ่มเติม</a>
+            </div>
+        </nav>
         <div id="contentdata">
             <?php include('home.php');?>
         </div>

@@ -18,7 +18,8 @@ a:hover{ /* Pseudo-Class Selector */
 }
 
 .menutype{ /* Class Selector */
-     
+    margin: auto;
+    text-align: center;
     width: 100%;
     padding: 20px;
     margin-top: 20px;

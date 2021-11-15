@@ -1,9 +1,22 @@
 <?php include('api/setlink.php'); ?>
 <?php include('api/connect.php');
-    $queryvaccines = mysqli_query($conn, "SELECT `vac_name` FROM `vaccines`");
-    $querylocation = mysqli_query($conn, "SELECT `lct_name`,`lct_id` FROM `locations`");
     
+    $per_page = 2;
+    if (isset($_GET['page'])) $page = $_GET['page'];
+    else $page = 1;
 
+    $start = ($page - 1) * $per_page;
+
+    $SQL1 = "SELECT reserves.res_locationid, reserves.res_fname, reserves.res_lname, locations.lct_id, locations.lct_name FROM reserves INNER JOIN locations 
+    ON reserves.res_locationid = locations.lct_id LIMIT {$start}, {$per_page}";
+    $SQLQUERY1 = mysqli_query($conn, $SQL1);
+    
+    
+    $SQL2 = "SELECT reserves.res_locationid, reserves.res_fname, reserves.res_lname, locations.lct_id, locations.lct_name FROM reserves INNER JOIN locations 
+    ON reserves.res_locationid = locations.lct_id";
+    $SQLQUERY2 = mysqli_query($conn, $SQL2);
+    $TOTAL_RECORD = mysqli_num_rows($SQLQUERY2);
+    $TOTAL_PAGE = ceil($TOTAL_RECORD / $per_page);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,49 +36,40 @@
 </head>
 
 <body>
+
+    <nav>
+        <div class="menutype">
+        <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost; ?>">โรงพยาบาล</a>
+            <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost; ?>">กลับหน้าหลัก</a>
+        </div>
+    </nav>
+
     <main>
+        <h2 style="text-align:center; margin-top:20px;">หน้า <?php echo $_GET['page'];?></h2>
         <table class="table">
             <tr>
                 <th>#</th>
-                <th>ชื่อโรงพยาบาล</th>
-                <th>จำนวน</th>
+                <th>ชื่อ - นามสกุล</th>
+                <th>ชื่อโรงพยาบาลที่จองวัคซีน</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>โรงพยาบาลบางซื่อ</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>โรงพยาบาลบางโพ</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>โรงพยาบาลบางโพ</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>โรงพยาบาลบางโพ</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>โรงพยาบาลบางโพ</td>
-                <td>30</td>
-            </tr>
+            <?php $number_no = 1;
+            while($ROWS = mysqli_fetch_array($SQLQUERY1)){?>
+                <tr>
+                
+                    <td><?php echo $number_no++;?></td>
+                    <td><?php echo $ROWS['res_fname'];?> <?php echo $ROWS['res_lname'];?></td>
+                    <td><?php echo $ROWS['lct_name'];?></td>
+                </tr>
+            <?php }?>
         </table>
     </main>
     <nav>
         <div class="menutype">
-            <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost; ?>">&laquo;</a>
-            <a data-target="check-vaccine">1</a>
-            <a data-target="check-vaccine">2</a>
-            <a data-target="check-vaccine">3</a>
-            <a data-target="check-vaccine">4</a>
-            <a data-target="check-vaccine">5</a>
-            <a style="text-decoration: none; color: black;" href="<?php echo $mylocalhost; ?>">&raquo;</a>
+            <a href="./check-all?page=1" style="text-decoration: none; color: black;"><<</a>
+            <?php for($i=1; $i<=$TOTAL_PAGE; $i++){?>
+                <a href="./check-all?page=<?php echo $i;?>" style="text-decoration: none; color: black;"><?php echo $i;?></a>
+            <?php }?>
+            <a href="./check-all?page=<?php echo $TOTAL_PAGE;?>" style="text-decoration: none; color: black;">>></a>
         </div>
     </nav>
 </body>
