@@ -1,5 +1,7 @@
 <?php include('api/setlink.php'); ?>
 <?php include('api/connect.php');
+
+    error_reporting(0);
     
     $per_page = 5;
     if (isset($_GET['page'])) $page = $_GET['page'];
