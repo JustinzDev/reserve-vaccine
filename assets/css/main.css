@@ -109,13 +109,16 @@ h5 { /* Type Selector */
 #listofvaccine{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
 }
 
 #listofvaccine div{
+
     padding: 20px;
+    border: solid 2px pink;
+    font-size: 18px;
 }
 
 @media screen and (max-width: 1024px) { /* Moblie */
