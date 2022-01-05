@@ -5,5 +5,5 @@
 ติดตั้งสำหรับโปรเจคของคุณ:
 
 ```bash
-git clone Justinzsamp/reserve-vaccine
+git clone JustinzDev/reserve-vaccine
 ```
